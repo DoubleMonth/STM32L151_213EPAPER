@@ -74,8 +74,10 @@ int main(void)
   /* USER CODE BEGIN 1 */
 
 	char time_string[] = {'0', '0', ':', '0', '0', '\0'};
+	char* time_table[]={"0","1","2","3","4","5","6","7","8","9"};
   unsigned long time_start_ms;
   unsigned long time_now_s;
+	char temp;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -168,71 +170,26 @@ EPD epd;
 	  Paint_DrawStringAt(&paint, 220, 25,  "9", &Font20, COLORED);    //0
 	  Paint_DrawStringAt(&paint, 234, 25,  "C", &Font20, COLORED);    //℃
 	  
-	  Paint_DrawStringAt(&paint, 187, 41,  "/", &Font21, COLORED);    //温
+	  Paint_DrawStringAt(&paint, 187, 41,  "/", &Font21, COLORED);    //湿
 	  Paint_DrawStringAt(&paint, 207, 41,  "0", &Font21, COLORED);    //度
-	  
+	
+
 	  Paint_DrawStringAt(&paint, 187, 62,  "2", &Font20, COLORED);    //2
 	  Paint_DrawStringAt(&paint, 200, 62,  "9", &Font20, COLORED);    //5
 	  Paint_DrawStringAt(&paint, 210, 62,  ".", &Font20, COLORED);    //.
 	  Paint_DrawStringAt(&paint, 220, 62,  "9", &Font20, COLORED);    //0
 	  Paint_DrawStringAt(&paint, 234, 62,  "%", &Font20, COLORED);    //%
 	  
-	  
-  EPD_SetFrameMemory(&epd, frame_buffer, 0, 0, 72, 80);
-  Paint_DrawRectangle(&paint, 0, 86, 250, 84, COLORED);
-  Paint_DrawRectangle(&paint, 0, 85, 250, 83, COLORED);
-	Paint_DrawStringAt(&paint, 0, 0, "12", &Font80, COLORED);
-	Paint_DrawStringAt(&paint, 70, 0, ":", &Font80, COLORED);
-	Paint_DrawStringAt(&paint, 100, 0, "34", &Font80, COLORED);
+	  Paint_DrawStringAt(&paint, 0, 0, "12", &Font80, COLORED);   //小时
+	Paint_DrawStringAt(&paint, 70, 0, ":", &Font80, COLORED);	//：
+	Paint_DrawStringAt(&paint, 100, 0, "34", &Font80, COLORED);//分钟
+	
+  Paint_DrawRectangle(&paint, 0, 86, 250, 84, COLORED);   //画两个矩形显示成黑色条
+  Paint_DrawRectangle(&paint, 0, 85, 250, 83, COLORED);	
   EPD_SetFrameMemory(&epd, frame_buffer, 0, 0, 120, 250);
-
-
-//Paint_SetRotate(&paint, ROTATE_90);
-//    Paint_Clear(&paint, UNCOLORED);
-//	Paint_DrawStringAt(&paint, 0, 0, "59", &Font80, COLORED);
-//  EPD_SetFrameMemory(&epd, frame_buffer, 0, 0, 80, 200);
-  
-//  Paint_Clear(&paint, UNCOLORED);
-//  Paint_DrawStringAt(&paint, 0, 0, "Hello Kit!", &Font16, COLORED);
-//  EPD_SetFrameMemory(&epd, frame_buffer, 0, 16, 128, 16);
-  
-//    time_string[0] = 1 + '0';
-//    time_string[1] = 2 + '0';
-//    time_string[3] = 5 + '0';
-//    time_string[4] = 9 + '0';
-//    Paint_SetWidth(&paint, 80);
-//    Paint_SetHeight(&paint, 200);
-//    Paint_SetRotate(&paint, ROTATE_90);
-
-//    Paint_Clear(&paint, UNCOLORED);
-//    Paint_DrawStringAt(&paint, 0, 4, time_string, &Font80, COLORED);
-//    EPD_SetFrameMemory(&epd, frame_buffer, 32, 0, Paint_GetWidth(&paint), Paint_GetHeight(&paint));
-//    EPD_DisplayFrame(&epd);
-
-  
-//  EPD_DisplayFrame(&epd);
-  
-  
-//  Paint_Init (&paint, frame_buffer, 72, 72);
-//  Paint_Clear(&paint, UNCOLORED);
-//  Paint_Init (&paint, frame_buffer, 64, 64);
-  // Draw something to the frame buffer 
-//  Paint_DrawRectangle(&paint, 0, 0, 40, 50, COLORED);
-//  Paint_DrawLine(&paint, 0, 0, 40, 50, COLORED);
-//  Paint_DrawLine(&paint, 40, 0, 0, 50, COLORED);
-//  Paint_DrawCircle(&paint, 88, 80, 30, COLORED);
-//  Paint_DrawFilledRectangle(&paint, 10, 120, 50, 180, COLORED);
-//  Paint_DrawFilledCircle(&paint, 88, 150, 30, COLORED);
-  
-//  EPD_SetFrameMemory(&epd, frame_buffer, 0, 32, 72, 72);
-  
   EPD_DisplayFrame(&epd);
-  
-  
-//  
-//  /* Display the frame_buffer */
-//  EPD_SetFrameMemory(&epd, frame_buffer, 0, 0, Paint_GetWidth(&paint), Paint_GetHeight(&paint));
-//  EPD_DisplayFrame(&epd);
+
+
   EPD_DelayMs(&epd, 2000);
 
   /**
@@ -247,10 +204,10 @@ EPD epd;
 //  EPD_DisplayFrame(&epd);
 
   /* EPD_or partial update */
-////  if (EPD_Init(&epd, lut_partial_update) != 0) {     //设置全局刷新还是局部刷新
-//////    printf("e-Paper init failed\n");
-////    return -1;
-////  }
+  if (EPD_Init(&epd, lut_partial_update) != 0) {     //设置全局刷新还是局部刷新
+//    printf("e-Paper init failed\n");
+    return -1;
+  }
 
   /**
    *  there are 2 memory areas embedded in the e-paper display
@@ -277,25 +234,29 @@ EPD epd;
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-////	  time_now_s = (HAL_GetTick() - time_start_ms) / 1000;
-////    time_string[0] = time_now_s / 60 / 10 + '0';
-////    time_string[1] = time_now_s / 60 % 10 + '0';
-////    time_string[3] = time_now_s % 60 / 10 + '0';
-////    time_string[4] = time_now_s % 60 % 10 + '0';
+	  time_now_s = (HAL_GetTick() - time_start_ms) / 1000;
+    time_string[0] = time_now_s / 60 / 10 + '0';
+    time_string[1] = time_now_s / 60 % 10 + '0';
+    time_string[3] = time_now_s % 60 / 10 + '0';
+    time_string[4] = time_now_s % 60 % 10 + '0';
 
-////    Paint_SetWidth(&paint, 32);
-////    Paint_SetHeight(&paint, 96);
-////    Paint_SetRotate(&paint, ROTATE_90);
+//    Paint_SetWidth(&paint, 86);
+//    Paint_SetHeight(&paint, 70);
+    Paint_SetRotate(&paint, ROTATE_90);
 
-////    Paint_Clear(&paint, UNCOLORED);
-////    Paint_DrawStringAt(&paint, 0, 4, time_string, &Font24, COLORED);
-////    EPD_SetFrameMemory(&epd, frame_buffer, 80, 72, Paint_GetWidth(&paint), Paint_GetHeight(&paint));
-////    EPD_DisplayFrame(&epd);
+    Paint_Clear(&paint, UNCOLORED);
+    Paint_DrawStringAt(&paint, 0, 0, time_table[time_now_s / 60 / 10], &Font80, COLORED);
+	  Paint_DrawStringAt(&paint, 40, 0, time_table[time_now_s / 60% 10], &Font80, COLORED);
+	  Paint_DrawStringAt(&paint, 70, 0, ":", &Font80, COLORED);	//：
+	  Paint_DrawStringAt(&paint, 100, 0, time_table[time_now_s % 60 / 10], &Font80, COLORED);
+	  Paint_DrawStringAt(&paint, 140, 0, time_table[time_now_s % 60 % 10], &Font80, COLORED);
+    EPD_SetFrameMemory(&epd, frame_buffer, 0, 0, Paint_GetWidth(&paint), Paint_GetHeight(&paint));
+    EPD_DisplayFrame(&epd);
 	  
 	  HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);
 	  HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin);
 
-	HAL_Delay(500);
+	HAL_Delay(1000);
 ////    EPD_DelayMs(&epd, 500);
   }
   /* USER CODE END 3 */
