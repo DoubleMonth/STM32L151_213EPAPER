@@ -30,6 +30,9 @@
 #include "epdpaint.h"
 #include "imagedata.h"
 #include <stdlib.h>
+#include "pcf8563.h"
+
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -99,7 +102,7 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_SPI1_Init();
-  MX_USART1_UART_Init();
+//  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
 EPD epd;
@@ -189,8 +192,8 @@ EPD epd;
   EPD_SetFrameMemory(&epd, frame_buffer, 0, 0, 120, 250);
   EPD_DisplayFrame(&epd);
 
-
-  EPD_DelayMs(&epd, 2000);
+rt_thread_mdelay(2000);
+//  EPD_DelayMs(&epd, 2000);
 
   /**
    *  there are 2 memory areas embedded in the e-paper display
@@ -223,7 +226,7 @@ EPD epd;
 //  EPD_SetFrameMemory(&epd, IMAGE_DATA, 0, 0, epd.width, epd.height);
 //  EPD_DisplayFrame(&epd);
 
-  time_start_ms = HAL_GetTick();
+//  time_start_ms = HAL_GetTick();
 
   /* USER CODE END 2 */
 
@@ -234,29 +237,28 @@ EPD epd;
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  time_now_s = (HAL_GetTick() - time_start_ms) / 1000;
-    time_string[0] = time_now_s / 60 / 10 + '0';
-    time_string[1] = time_now_s / 60 % 10 + '0';
-    time_string[3] = time_now_s % 60 / 10 + '0';
-    time_string[4] = time_now_s % 60 % 10 + '0';
+////	  time_now_s = (HAL_GetTick() - time_start_ms) / 1000;
+////    time_string[0] = time_now_s / 60 / 10 + '0';
+////    time_string[1] = time_now_s / 60 % 10 + '0';
+////    time_string[3] = time_now_s % 60 / 10 + '0';
+////    time_string[4] = time_now_s % 60 % 10 + '0';
 
-//    Paint_SetWidth(&paint, 86);
-//    Paint_SetHeight(&paint, 70);
-    Paint_SetRotate(&paint, ROTATE_90);
+////    Paint_SetRotate(&paint, ROTATE_90);
 
-    Paint_Clear(&paint, UNCOLORED);
-    Paint_DrawStringAt(&paint, 0, 0, time_table[time_now_s / 60 / 10], &Font80, COLORED);
-	  Paint_DrawStringAt(&paint, 40, 0, time_table[time_now_s / 60% 10], &Font80, COLORED);
-	  Paint_DrawStringAt(&paint, 70, 0, ":", &Font80, COLORED);	//£º
-	  Paint_DrawStringAt(&paint, 100, 0, time_table[time_now_s % 60 / 10], &Font80, COLORED);
-	  Paint_DrawStringAt(&paint, 140, 0, time_table[time_now_s % 60 % 10], &Font80, COLORED);
-    EPD_SetFrameMemory(&epd, frame_buffer, 0, 0, Paint_GetWidth(&paint), Paint_GetHeight(&paint));
-    EPD_DisplayFrame(&epd);
-	  
+////    Paint_Clear(&paint, UNCOLORED);
+////    Paint_DrawStringAt(&paint, 0, 0, time_table[time_now_s / 60 / 10], &Font80, COLORED);
+////	  Paint_DrawStringAt(&paint, 40, 0, time_table[time_now_s / 60% 10], &Font80, COLORED);
+////	  Paint_DrawStringAt(&paint, 70, 0, ":", &Font80, COLORED);	//£º
+////	  Paint_DrawStringAt(&paint, 100, 0, time_table[time_now_s % 60 / 10], &Font80, COLORED);
+////	  Paint_DrawStringAt(&paint, 140, 0, time_table[time_now_s % 60 % 10], &Font80, COLORED);
+////    EPD_SetFrameMemory(&epd, frame_buffer, 0, 0, Paint_GetWidth(&paint), Paint_GetHeight(&paint));
+////    EPD_DisplayFrame(&epd);
+////	  
 	  HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);
 	  HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin);
+	  rt_thread_mdelay(500);
 
-	HAL_Delay(1000);
+////	HAL_Delay(1000);
 ////    EPD_DelayMs(&epd, 500);
   }
   /* USER CODE END 3 */
@@ -334,5 +336,7 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+
+
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

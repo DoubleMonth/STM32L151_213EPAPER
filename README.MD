@@ -1,4 +1,5 @@
+SSH git@github.com:DoubleMonth/STM32L151_213EPAPER.git
 STM32L151C8T6A 墨水屏显示程序
 2020-10-23 实现了2.13寸墨水屏显示文字功能，可以显示制定的汉字，数字，显示时钟界面
 2020-10-29 在之前的基础上优化了显示的位置，增加了局部刷新的功能。
-SSH git@github.com:DoubleMonth/STM32L151_213EPAPER.git
+2020-10-30 加入了RTThread-Nano操作系统，可以使用UART控制台，调试输出。

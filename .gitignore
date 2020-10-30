@@ -1,0 +1,13 @@
+*.pyc
+MDK-ARM\STM32L151C8TxA
+*.o
+*.axf
+*.crf
+*.d
+*.dep
+*.htm
+*.iex
+*.map
+*.lnp
+*.sct
+

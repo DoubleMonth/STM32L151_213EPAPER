@@ -69,7 +69,8 @@ int EpdDigitalReadCallback(int pin_num) {
 }
 
 void EpdDelayMsCallback(unsigned int delaytime) {
-  HAL_Delay(delaytime);
+//  HAL_Delay(delaytime);
+	rt_thread_mdelay(delaytime);
 }
 
 void EpdSpiTransferCallback(unsigned char data) {

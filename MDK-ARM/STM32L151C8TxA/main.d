@@ -29,6 +29,15 @@ stm32l151c8txa\main.o: ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.
 stm32l151c8txa\main.o: ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h
 stm32l151c8txa\main.o: ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h
 stm32l151c8txa\main.o: ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h
+stm32l151c8txa\main.o: ..\rt-thread-3.1.3\include\rtthread.h
+stm32l151c8txa\main.o: ..\rt-thread-3.1.3\rtconfig.h
+stm32l151c8txa\main.o: C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE\RTE_Components.h
+stm32l151c8txa\main.o: ..\rt-thread-3.1.3\include\rtdebug.h
+stm32l151c8txa\main.o: ..\rt-thread-3.1.3\include\rtdef.h
+stm32l151c8txa\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+stm32l151c8txa\main.o: ..\rt-thread-3.1.3\include\rtservice.h
+stm32l151c8txa\main.o: ..\rt-thread-3.1.3\include\rtm.h
+stm32l151c8txa\main.o: ..\rt-thread-3.1.3\include\rtthread.h
 stm32l151c8txa\main.o: ../Core/Inc/spi.h
 stm32l151c8txa\main.o: ../Core/Inc/usart.h
 stm32l151c8txa\main.o: ../Core/Inc/gpio.h
@@ -38,3 +47,5 @@ stm32l151c8txa\main.o: ..\BSP\epdif.h
 stm32l151c8txa\main.o: ..\BSP\epdpaint.h
 stm32l151c8txa\main.o: ..\BSP\imagedata.h
 stm32l151c8txa\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+stm32l151c8txa\main.o: ..\packages\pcf8563\pcf8563.h
+stm32l151c8txa\main.o: ..\rt-thread-3.1.3\include\rthw.h
