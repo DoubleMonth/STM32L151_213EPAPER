@@ -229,9 +229,9 @@ rt_thread_mdelay(2000);
 ////    EPD_SetFrameMemory(&epd, frame_buffer, 0, 0, Paint_GetWidth(&paint), Paint_GetHeight(&paint));
 ////    EPD_DisplayFrame(&epd);
 ////	  
-//	  HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);
-//	  HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin);
-//	  rt_thread_mdelay(500);
+	  HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);
+	  HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin);
+	  rt_thread_mdelay(1000);
 
 	/*    PCF8563 1∑÷÷”÷–∂œ ‰≥ˆ start
 	while(PCF85636_ReadINT()==0)
@@ -270,12 +270,13 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
-  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;  //RCC_OSCILLATORTYPE_HSE
+  RCC_OscInitStruct.HSIState = RCC_HSI_ON; 
+  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL8;
-  RCC_OscInitStruct.PLL.PLLDIV = RCC_PLL_DIV2;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;  //  RCC_PLLSOURCE_HSE
+  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL4;    //RCC_PLL_MUL8
+  RCC_OscInitStruct.PLL.PLLDIV = RCC_PLL_DIV2;   //RCC_PLL_DIV2
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();

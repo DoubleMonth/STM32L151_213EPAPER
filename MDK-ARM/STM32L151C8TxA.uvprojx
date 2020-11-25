@@ -685,6 +685,11 @@
               <FileType>1</FileType>
               <FilePath>..\packages\si7020\si7020_iic.c</FilePath>
             </File>
+            <File>
+              <FileName>key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\packages\key\key.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
