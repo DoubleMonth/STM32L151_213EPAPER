@@ -1,220 +1,231 @@
-#include <rthw.h>
-#include <rtthread.h>
-//#include <rtdevice.h>
-#include <string.h>
-#define DBG_ENABLE
-#define DBG_SECTION_NAME "PCF8563"
-#define DBG_LEVEL DBG_LOG
-#define DBG_COLOR 
-#include <rtdbg.h>
-#include "pcf8563.h"
+#include "stdio.h" 
+#include "main.h"
+#include "stm32l1xx_hal.h"
+#include "usart.h"
+#include "pcf8563/pcf8563.h"
+//////////////////////////////////////////////////////////////////////////////////	 
+//本程序只供学习使用，未经作者许可，不得用于其它任何用途
+//ALIENTEK STM32F103开发板
+//IIC驱动代码	   
+//正点原子@ALIENTEK
+//技术论坛:www.openedv.com
+//创建日期:2017/6/13
+//版本：V1.0
+//版权所有，盗版必究。
+//Copyright(C) 广州市星翼电子科技有限公司 2014-2024
+//All rights reserved									  
+////////////////////////////////////////////////////////////////////////////////// 	
 
-pcf8563_device_t pcf8563_dev;
-static rt_err_t pcf8563_read_reg(struct rt_i2c_bus_device *bus, rt_uint8_t reg,rt_uint8_t len,rt_uint8_t *buf)
+unsigned char  time_buf1[8]={20,17,12,31,23,59,50,6};
+//uint8_t time_buf1[8]={1,2,3,4,5,6,7,8};
+unsigned char time_buf[8];
+unsigned char time_buf2[8];
+unsigned char *time_buf1_sp;
+
+void pcf8563_delay_us(uint32_t us)
 {
-	struct rt_i2c_msg msgs[2];
-	msgs[0].addr = PCF8563_ADDR;
-	msgs[0].flags = RT_I2C_WR;
-	msgs[0].buf = &reg;
-	msgs[0].len = 1;
+	uint32_t i,j;
+	for(i=0;i<us;i++)
+	{
+		for(j=0;j<100;j++)
+		{};
+	}
+}
+//IIC初始化
+void PCF8563_IIC_Init(void)
+{
+    GPIO_InitTypeDef GPIO_Initure;
+    
+    __HAL_RCC_GPIOB_CLK_ENABLE();   //使能GPIOC时钟
+    
+    //PC11,12初始化设置
+    GPIO_Initure.Pin|=PCF8563_SCL_Pin|PCF8563_SDA_Pin;
+    GPIO_Initure.Mode=GPIO_MODE_OUTPUT_PP;  //推挽输出
+    GPIO_Initure.Pull=GPIO_PULLUP;          //上拉
+    GPIO_Initure.Speed=GPIO_SPEED_FREQ_HIGH;     //高速
+    HAL_GPIO_Init(GPIOB,&GPIO_Initure);
+    
+	HAL_GPIO_WritePin(PCF8563_SCL_GPIO_Port,PCF8563_SCL_Pin,GPIO_PIN_SET);
+	HAL_GPIO_WritePin(PCF8563_SDA_GPIO_Port,PCF8563_SDA_Pin,GPIO_PIN_SET);
+}
+
+//产生IIC起始信号
+void PCF8563_IIC_Start(void)
+{
+	SDA_OUT(); 	         //sda线输出
+	HAL_GPIO_WritePin(PCF8563_SCL_GPIO_Port,PCF8563_SCL_Pin,GPIO_PIN_SET);
+	HAL_GPIO_WritePin(PCF8563_SDA_GPIO_Port,PCF8563_SDA_Pin,GPIO_PIN_SET);
+	rt_thread_mdelay(1);
+ 	HAL_GPIO_WritePin(PCF8563_SDA_GPIO_Port,PCF8563_SDA_Pin,GPIO_PIN_RESET);//START:when CLK is high,DATA change form high to low 
+	rt_thread_mdelay(1);
+	HAL_GPIO_WritePin(PCF8563_SCL_GPIO_Port,PCF8563_SCL_Pin,GPIO_PIN_RESET);//钳住I2C总线，准备发送或接收数据 
+}	  
+//产生IIC停止信号
+void PCF8563_IIC_Stop(void)
+{
+	SDA_OUT();//sda线输出
+	HAL_GPIO_WritePin(PCF8563_SCL_GPIO_Port,PCF8563_SCL_Pin,GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(PCF8563_SDA_GPIO_Port,PCF8563_SDA_Pin,GPIO_PIN_RESET);//STOP:when CLK is high DATA change form low to high
+ 	rt_thread_mdelay(1);
+	HAL_GPIO_WritePin(PCF8563_SCL_GPIO_Port,PCF8563_SCL_Pin,GPIO_PIN_SET);
+	HAL_GPIO_WritePin(PCF8563_SDA_GPIO_Port,PCF8563_SDA_Pin,GPIO_PIN_SET);//发送I2C总线结束信号
+	rt_thread_mdelay(1);							   	
+}
+//等待应答信号到来
+//返回值：1，接收应答失败
+//        0，接收应答成功
+uint8_t PCF8563_IIC_Wait_Ack(void)
+{
+	uint8_t ucErrTime=0;
+	SDA_IN();      //SDA设置为输入  
+	HAL_GPIO_WritePin(PCF8563_SDA_GPIO_Port,PCF8563_SDA_Pin,GPIO_PIN_SET);
+	rt_thread_mdelay(1);	   
+	HAL_GPIO_WritePin(PCF8563_SCL_GPIO_Port,PCF8563_SCL_Pin,GPIO_PIN_SET);
+	rt_thread_mdelay(1);	 
+	while(HAL_GPIO_ReadPin(PCF8563_SDA_GPIO_Port,PCF8563_SDA_Pin))
+	{
+		ucErrTime++;
+		if(ucErrTime>250)
+		{
+			PCF8563_IIC_Stop();
+			return 1;
+		}
+	}
+	HAL_GPIO_WritePin(PCF8563_SCL_GPIO_Port,PCF8563_SCL_Pin,GPIO_PIN_RESET);//时钟输出0 	   
+	return 0;  
+} 
+//产生ACK应答
+void PCF8563_IIC_Ack(void)
+{
+	HAL_GPIO_WritePin(PCF8563_SCL_GPIO_Port,PCF8563_SCL_Pin,GPIO_PIN_RESET);
+	SDA_OUT();
+	HAL_GPIO_WritePin(PCF8563_SDA_GPIO_Port,PCF8563_SDA_Pin,GPIO_PIN_RESET);
+	rt_thread_mdelay(1);
+	HAL_GPIO_WritePin(PCF8563_SCL_GPIO_Port,PCF8563_SCL_Pin,GPIO_PIN_SET);
+	rt_thread_mdelay(1);
+	HAL_GPIO_WritePin(PCF8563_SCL_GPIO_Port,PCF8563_SCL_Pin,GPIO_PIN_RESET);
+}
+//不产生ACK应答		    
+void PCF8563_IIC_NAck(void)
+{
+	HAL_GPIO_WritePin(PCF8563_SCL_GPIO_Port,PCF8563_SCL_Pin,GPIO_PIN_RESET);
+	SDA_OUT();
+	HAL_GPIO_WritePin(PCF8563_SDA_GPIO_Port,PCF8563_SDA_Pin,GPIO_PIN_SET);
+	rt_thread_mdelay(1);
+	HAL_GPIO_WritePin(PCF8563_SCL_GPIO_Port,PCF8563_SCL_Pin,GPIO_PIN_SET);
+	rt_thread_mdelay(1);
+	HAL_GPIO_WritePin(PCF8563_SCL_GPIO_Port,PCF8563_SCL_Pin,GPIO_PIN_RESET);
+}					 				     
+//IIC发送一个字节
+//返回从机有无应答
+//1，有应答
+//0，无应答			  
+void PCF8563_IIC_Send_Byte(uint8_t txd)
+{                        
+    uint8_t t;   
+	SDA_OUT(); 	    
+    HAL_GPIO_WritePin(PCF8563_SCL_GPIO_Port,PCF8563_SCL_Pin,GPIO_PIN_RESET);//拉低时钟开始数据传输
+    for(t=0;t<8;t++)
+    {              
+		if((txd&0x80)>>7)
+			HAL_GPIO_WritePin(PCF8563_SDA_GPIO_Port,PCF8563_SDA_Pin,GPIO_PIN_SET);
+		else
+			HAL_GPIO_WritePin(PCF8563_SDA_GPIO_Port,PCF8563_SDA_Pin,GPIO_PIN_RESET);
+        txd<<=1; 	  
+		rt_thread_mdelay(1);   //对TEA5767这三个延时都是必须的
+		HAL_GPIO_WritePin(PCF8563_SCL_GPIO_Port,PCF8563_SCL_Pin,GPIO_PIN_SET);
+		rt_thread_mdelay(1); 
+		HAL_GPIO_WritePin(PCF8563_SCL_GPIO_Port,PCF8563_SCL_Pin,GPIO_PIN_RESET);
+		rt_thread_mdelay(1);
+    }	 
+} 	    
+//读1个字节，ack=1时，发送ACK，ack=0，发送nACK   
+uint8_t PCF8563_IIC_Read_Byte(unsigned char ack)
+{
+	unsigned char i,receive=0;
+	SDA_IN();//SDA设置为输入
+    for(i=0;i<8;i++ )
+	{
+        HAL_GPIO_WritePin(PCF8563_SCL_GPIO_Port,PCF8563_SCL_Pin,GPIO_PIN_RESET);
+        rt_thread_mdelay(1);
+		HAL_GPIO_WritePin(PCF8563_SCL_GPIO_Port,PCF8563_SCL_Pin,GPIO_PIN_SET);
+        receive<<=1;
+        if(HAL_GPIO_ReadPin(PCF8563_SDA_GPIO_Port,PCF8563_SDA_Pin))receive++;   
+		rt_thread_mdelay(1); 
+    }					 
+    if (!ack)
+        PCF8563_IIC_NAck();//发送nACK
+    else
+        PCF8563_IIC_Ack(); //发送ACK   
+    return receive;
+}
+
+
+//uint8_t si70xx_buff[1];
+//uint8_t si70xx_data[2];
+uint8_t PCF8563_ReadOneByte(uint16_t ReadAddr)
+{
+	uint8_t temp = 0;
+	PCF8563_IIC_Start();
+	PCF8563_IIC_Send_Byte(PCF8563_ADDR);
+	PCF8563_IIC_Wait_Ack();
+	PCF8563_IIC_Send_Byte(ReadAddr);
+	PCF8563_IIC_Wait_Ack();
+	PCF8563_IIC_Start();
+	PCF8563_IIC_Send_Byte(PCF8563_ADDR|PCF8563_READ);
+	PCF8563_IIC_Wait_Ack();
+	temp = PCF8563_IIC_Read_Byte(0);
 	
-	msgs[1].addr = PCF8563_ADDR;
-	msgs[1].flags = RT_I2C_RD;
-	msgs[1].buf = buf;
-	msgs[1].len = len;
-	if(rt_i2c_transfer(bus,msgs,2)==2)
-	{
-		return RT_EOK;
-	}
-	else
-	{
-		return -RT_ERROR;
-	}
+	PCF8563_IIC_Stop();
+	return temp;
 }
-static rt_err_t pcf8563_write_reg(struct rt_i2c_bus_device *bus, rt_uint8_t reg,rt_uint8_t data)
+uint8_t PCF8563_WriteOneByte(uint8_t WriteAddr,uint8_t DataToWrite)
 {
-	struct rt_i2c_msg msgs;
-	rt_uint8_t buf[2]={reg,data};
-	
-	msgs.addr = PCF8563_ADDR;
-	msgs.flags = RT_I2C_WR;
-	msgs.buf = buf;
-	msgs.len = 2;
-	
-	if(rt_i2c_transfer(bus,&msgs,1)==1)
-	{
-		return RT_EOK;
-	}
-	else
-	{
-		return -RT_ERROR;
-	}
+	PCF8563_IIC_Start();
+	PCF8563_IIC_Send_Byte(PCF8563_ADDR);
+	PCF8563_IIC_Wait_Ack();
+	PCF8563_IIC_Send_Byte(WriteAddr);
+	PCF8563_IIC_Wait_Ack();
+	PCF8563_IIC_Send_Byte(DataToWrite);
+	PCF8563_IIC_Wait_Ack();
+	PCF8563_IIC_Stop();
+	rt_thread_mdelay(1);
 }
-rt_err_t pcf8563_start(void)
+void PCF8563_WriteTime(void)
 {
-	rt_uint8_t cmd =0x08,val;
-	rt_err_t result;
-	rt_kprintf("pcf8563 start.");
-	RT_ASSERT(pcf8563_dev);
-	result = rt_mutex_take(pcf8563_dev->lock, RT_WAITING_FOREVER);
-	if(result==RT_EOK)
+	uint8_t i,temp;
+	for(i=0;i<8;i++)
 	{
-		val= pcf8563_write_reg(pcf8563_dev->i2c,PCF8563_CONTROL_ADDR,cmd);
-		rt_mutex_release(pcf8563_dev->lock);
-		return val;
+		temp = time_buf1[i]/10;
+		time_buf[i] = time_buf1[i]%10;
+		time_buf[i] = time_buf[i]+temp*16;
 	}
-	else
-	{
-		LOG_E("The pcf8563 can't start. Please try again");
-		rt_mutex_release(pcf8563_dev->lock);
-		return -RT_ERROR;
-	}
+	PCF8563_WriteOneByte(CONTROL_STATUS_1,0X20);
+	PCF8563_WriteOneByte(PCF8563_YEAR_ADDRESS,time_buf[1]);
+	PCF8563_WriteOneByte(PCF8563_MONTH_ADDRESS,time_buf[2]);
+	PCF8563_WriteOneByte(PCF8563_DAY_ADDRESS,time_buf[3]);
+	PCF8563_WriteOneByte(PCF8563_HOUR_ADDRESS,time_buf[4]);
+	PCF8563_WriteOneByte(PCF8563_MINUTE_ADDRESS,time_buf[5]);
+	PCF8563_WriteOneByte(PCF8563_SECOND_ADDRESS,time_buf[6]);
+	PCF8563_WriteOneByte(PCF8563_WEEK_ADDRESS,time_buf[7]);
+	PCF8563_WriteOneByte(CONTROL_STATUS_1,0X00);
 }
-rt_err_t pcf8563_stop(void)
+extern uint8_t time_buffer[8];
+void PCF8563_ReadTime(uint8_t *p_time_buf)
 {
-	rt_uint8_t cmd =0x28,val;
-	rt_err_t result;
-	rt_kprintf("pcf8563 stop.");
-	RT_ASSERT(pcf8563_dev);
-	result = rt_mutex_take(pcf8563_dev->lock, RT_WAITING_FOREVER);
-	if(result==RT_EOK)
+	uint8_t i,temp;
+	time_buf[1] = PCF8563_ReadOneByte(PCF8563_YEAR_ADDRESS)&0XFF;
+	time_buf[2] = PCF8563_ReadOneByte(PCF8563_MONTH_ADDRESS)&0X1F;
+	time_buf[3] = PCF8563_ReadOneByte(PCF8563_DAY_ADDRESS)&0X3F;
+	time_buf[4] = PCF8563_ReadOneByte(PCF8563_HOUR_ADDRESS)&0X3F;
+	time_buf[5] = PCF8563_ReadOneByte(PCF8563_MINUTE_ADDRESS)&0X7F;
+	time_buf[6] = PCF8563_ReadOneByte(PCF8563_SECOND_ADDRESS)&0X7F;
+	time_buf[7] = PCF8563_ReadOneByte(PCF8563_WEEK_ADDRESS)&0X0F;
+	for(i=0;i<8;i++)
 	{
-		val= pcf8563_write_reg(pcf8563_dev->i2c,PCF8563_CONTROL_ADDR,cmd);
-		rt_mutex_release(pcf8563_dev->lock);
-		return val;
+		temp=time_buf[i]/16;
+		time_buffer[i]=time_buf[i]%16;
+		time_buffer[i]=time_buffer[i]+temp*10;
 	}
-	else
-	{
-		LOG_E("The pcf8563 can't stop. Please try again");
-		rt_mutex_release(pcf8563_dev->lock);
-		return -RT_ERROR;
-	}
+
 }
-struct pcf8563_time pcf8563_read_time(void)
-{
-	rt_err_t result;
-	struct pcf8563_time time;
-	rt_uint8_t time_buf[3];
-	RT_ASSERT(pcf8563_dev);
-	result = rt_mutex_take(pcf8563_dev->lock, RT_WAITING_FOREVER);
-	if (result == RT_EOK)
-	{
-		pcf8563_read_reg(pcf8563_dev->i2c,PCF8563_SECOND_ADDR,1,&time_buf[0]);
-		pcf8563_read_reg(pcf8563_dev->i2c,PCF8563_MINUTE_ADDR,1,&time_buf[1]);
-		pcf8563_read_reg(pcf8563_dev->i2c,PCF8563_HOUR_ADDR,1,&time_buf[2]);
-		time.second=((time_buf[0]>>4)&0x07)*10+(time_buf[0]&0x0f);
-		time.minute=((time_buf[1]>>4)&0x07)*10+(time_buf[1]&0x0f);
-		time.hour=((time_buf[2]>>4)&0x03)*10+(time_buf[2]&0x0f);
-		rt_mutex_release(pcf8563_dev->lock);
-//		rt_kprintf("Now time %d:%d:%d\n",time.hour,time.minute,time.second);
-	}
-	else
-	{
-		LOG_E("The pcf8563 could not respond time read at this time. Please try again");
-		rt_mutex_release(pcf8563_dev->lock);
-	}
-	return time;
-}
-struct pcf8563_day pcf8563_read_day(void)
-{
-	rt_err_t result;
-	struct pcf8563_day day;
-	rt_uint8_t time_buf[4];
-	RT_ASSERT(pcf8563_dev);
-	result = rt_mutex_take(pcf8563_dev->lock, RT_WAITING_FOREVER);
-	if (result == RT_EOK)
-	{
-		pcf8563_read_reg(pcf8563_dev->i2c,PCF8563_DAY_ADDR,1,&time_buf[0]);
-		pcf8563_read_reg(pcf8563_dev->i2c,PCF8563_WEEK_ADDR,1,&time_buf[1]);
-		pcf8563_read_reg(pcf8563_dev->i2c,PCF8563_MONTH_ADDR,1,&time_buf[2]);
-		pcf8563_read_reg(pcf8563_dev->i2c,PCF8563_YEAR_ADDR,1,&time_buf[3]);
-		day.day=((time_buf[0]>>4)&0x03)*10+(time_buf[0]&0x0f);
-		day.week=time_buf[1]&0x07;
-		day.month=((time_buf[2]>>4)&0x01)*10+(time_buf[2]&0x0f);
-		day.year=((time_buf[3]>>4)&0x0f)*10+(time_buf[3]&0x0f);
-		rt_mutex_release(pcf8563_dev->lock);
-//		rt_kprintf("The day 20%d-%d-%d,week %d\n",day.year,day.month,day.day,day.week);
-	}
-	else
-	{
-		LOG_E("The pcf8563 could not respond day read at this time. Please try again");
-		rt_mutex_release(pcf8563_dev->lock);
-	}
-	return day;
-}
-void pcf8563WriteTime(struct pcf8563_time time_temp)
-{
-	rt_err_t result;
-	rt_uint8_t time_buf[3];
-	time_buf[0]=((time_temp.second/10)<<4)+(time_temp.second%10);  //秒
-	time_buf[1]=((time_temp.minute /10)<<4)+(time_temp.minute%10);  //分
-	time_buf[2]=((time_temp.hour /10)<<4)+(time_temp.hour%10);  //时
-	RT_ASSERT(pcf8563_dev);
-	result = rt_mutex_take(pcf8563_dev->lock, RT_WAITING_FOREVER);
-	if (result == RT_EOK)
-	{
-		pcf8563_write_reg(pcf8563_dev->i2c,PCF8563_SECOND_ADDR,time_buf[0]);
-		pcf8563_write_reg(pcf8563_dev->i2c,PCF8563_MINUTE_ADDR,time_buf[1]);
-		pcf8563_write_reg(pcf8563_dev->i2c,PCF8563_HOUR_ADDR,time_buf[2]);
-		rt_mutex_release(pcf8563_dev->lock);
-		rt_kprintf("Write Time %d:%d:%d\n",time_buf[0],time_buf[1],time_buf[2]);
-	}
-	else
-	{
-		LOG_E("The pcf8563 could not respond day read at this time. Please try again");
-		rt_mutex_release(pcf8563_dev->lock);
-	}
-}
-void pcf8563WriteDay(struct pcf8563_day day_temp)
-{
-	rt_err_t result;
-	rt_uint8_t time_buf[4];
-	time_buf[0]=((day_temp.day /10)<<4)+(day_temp.day%10);  //日
-	time_buf[1]=((day_temp.month /10)<<4)+(day_temp.month%10);  //月
-	time_buf[2]=((day_temp.year /10)<<4)+(day_temp.year%10);  //年
-	time_buf[3]=day_temp.week%7;  //周
-	RT_ASSERT(pcf8563_dev);
-	result = rt_mutex_take(pcf8563_dev->lock, RT_WAITING_FOREVER);
-	if (result == RT_EOK)
-	{
-		pcf8563_write_reg(pcf8563_dev->i2c,PCF8563_DAY_ADDR,time_buf[0]);
-		pcf8563_write_reg(pcf8563_dev->i2c,PCF8563_MONTH_ADDR,time_buf[1]);
-		pcf8563_write_reg(pcf8563_dev->i2c,PCF8563_YEAR_ADDR,time_buf[2]);
-		pcf8563_write_reg(pcf8563_dev->i2c,PCF8563_WEEK_ADDR,time_buf[3]);
-		rt_mutex_release(pcf8563_dev->lock);
-		rt_kprintf("Write Day 20%d-%d-%d,Week %d \n",time_buf[2],time_buf[1],time_buf[0],time_buf[3]);
-	}
-	else
-	{
-		LOG_E("The pcf8563 could not respond day read at this time. Please try again");
-		rt_mutex_release(pcf8563_dev->lock);
-	}
-}
-pcf8563_device_t pcf8563_init(void)
-{ 
-	rt_kprintf("pcf8563_init..\n");
-	const char *i2c_bus_name=PCF8563_DEVICE_NAME;
-	RT_ASSERT(i2c_bus_name);
-	pcf8563_dev = rt_calloc(1, sizeof(struct pcf8563_device));
-	if (pcf8563_dev == RT_NULL)
-    {
-        LOG_E("Can't allocate memory for pcf8563 device on '%s' ", i2c_bus_name);
-        return RT_NULL;
-    }
-	pcf8563_dev->i2c = rt_i2c_bus_device_find(i2c_bus_name);
-	if(pcf8563_dev->i2c == RT_NULL )
-	{
-		LOG_E ("Can't create mutex for pcf8563 device on '%s' ",i2c_bus_name);
-		rt_free(pcf8563_dev);
-		return RT_NULL;
-	}
-	pcf8563_dev->lock = rt_mutex_create("mutex_pcf8563",RT_IPC_FLAG_FIFO);
-	if(pcf8563_dev->lock == RT_NULL)
-	{
-		LOG_E("Can't create mutex for pcf8563 device on '%s' ",i2c_bus_name);
-		return RT_NULL;
-	}
-	rt_kprintf("pcf8563_init finshed!\n");
-    return pcf8563_dev;
-}
-MSH_CMD_EXPORT(pcf8563_read_time,read time);

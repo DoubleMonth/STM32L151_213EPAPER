@@ -30,8 +30,8 @@
 #include "epdpaint.h"
 #include "imagedata.h"
 #include <stdlib.h>
-#include "pcf8563.h"
-
+#include "pcf8563/pcf8563.h"
+#include "si7020/si7020_iic.h"
 
 /* USER CODE END Includes */
 
@@ -72,6 +72,10 @@ unsigned char frame_buffer[4096] = {0};
   * @brief  The application entry point.
   * @retval int
   */
+uint8_t time_buffer[8]={0};
+uint8_t time_buffer1[8]={0};
+double si7020_temperature;
+double si7020_humidity;
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -86,6 +90,7 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+	
   HAL_Init();
 
   /* USER CODE BEGIN Init */
@@ -102,12 +107,17 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_SPI1_Init();
-//  MX_USART1_UART_Init();
+  PCF8563_IIC_Init();
+  SI7020_IIC_Init();
+  MX_USART1_UART_Init();
+  PCF8563_WriteTime();
   /* USER CODE BEGIN 2 */
+	rt_kprintf("Init Finsh!\n");
 
-EPD epd;
+/*	
+
+	EPD epd;
   if (EPD_Init(&epd, lut_full_update) != 0) {  //设置全局刷新还是局部刷新  lut_full_update
-//    printf("e-Paper init failed\n");
     return -1;
   }
   
@@ -115,31 +125,6 @@ EPD epd;
   
   Paint paint;
   Paint_Init (&paint, frame_buffer, 120, 250);
- // Paint_Clear(&paint, UNCOLORED);
-  
-  
-  
-  /* For simplicity, the argum ents are explicit numerical coordinates */
-  /* Write strings to the buffer */
-//  Paint_DrawFilledRectangle(&paint, 0, 0, 96, 12, COLORED);
-//  EPD_SetFrameMemory(&epd, frame_buffer, 0, 0, 96, 12);
-/*   默认程序显示
-  Paint_Clear(&paint, UNCOLORED);
-  Paint_DrawStringAt(&paint, 0, 0, "23:59", &Font16, COLORED);
-  EPD_SetFrameMemory(&epd, frame_buffer, 0, 0, 128, 16);
-
-  Paint_Clear(&paint, UNCOLORED);
-  Paint_DrawStringAt(&paint, 0, 0, "Hello Kit!", &Font16, COLORED);
-  EPD_SetFrameMemory(&epd, frame_buffer, 0, 16, 128, 16);
-  
-  */
-  
-//	time_string[0] = 1 + '0';
-//    time_string[1] = 2 + '0';
-//    time_string[3] = 5 + '0';
-//    time_string[4] = 9 + '0';
-//    Paint_SetWidth(&paint, 80);
-//    Paint_SetHeight(&paint, 200);
     Paint_SetRotate(&paint, ROTATE_90);
     Paint_Clear(&paint, UNCOLORED);
 	Paint_DrawStringAt(&paint, 0, 95, "2", &Font16, COLORED);  //2
@@ -193,24 +178,11 @@ EPD epd;
   EPD_DisplayFrame(&epd);
 
 rt_thread_mdelay(2000);
-//  EPD_DelayMs(&epd, 2000);
 
-  /**
-   *  there are 2 memory areas embedded in the e-paper display
-   *  and once the display is refreshed, the memory area will be auto-toggled,
-   *  i.e. the next action of SetFrameMemory will set the other memory area
-   *  therefore you have to set the frame memory and refresh the display twice.
-   */
-//  EPD_ClearFrameMemory(&epd, 0xFF);
-//  EPD_DisplayFrame(&epd);
-//  EPD_ClearFrameMemory(&epd, 0xFF);
-//  EPD_DisplayFrame(&epd);
-
-  /* EPD_or partial update */
-  if (EPD_Init(&epd, lut_partial_update) != 0) {     //设置全局刷新还是局部刷新
-//    printf("e-Paper init failed\n");
-    return -1;
-  }
+*/
+//  if (EPD_Init(&epd, lut_partial_update) != 0) {     //设置全局刷新还是局部刷新
+//    return -1;
+//  }
 
   /**
    *  there are 2 memory areas embedded in the e-paper display
@@ -254,10 +226,17 @@ rt_thread_mdelay(2000);
 ////    EPD_SetFrameMemory(&epd, frame_buffer, 0, 0, Paint_GetWidth(&paint), Paint_GetHeight(&paint));
 ////    EPD_DisplayFrame(&epd);
 ////	  
+//	  HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);
+//	  HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin);
+//	  rt_thread_mdelay(500);
 	  HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);
 	  HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin);
-	  rt_thread_mdelay(500);
-
+	  PCF8563_ReadTime(time_buffer);
+//	 rt_kprintf("%d%d:%d%d,%d%d:%d%d\n",time_buffer[0]/10,time_buffer[0]%10,time_buffer[1]/10,time_buffer[1]%10,time_buffer[2]/10,time_buffer[2]%10,time_buffer[3]/10,time_buffer[3]%10);
+	rt_kprintf("%d%d:%d%d\n",time_buffer[4]%10,time_buffer[5]%10,time_buffer[6]%10,time_buffer[7]%10);
+	rt_thread_mdelay(500);
+	si7020Measure(&si7020_temperature,&si7020_humidity);
+	rt_kprintf("temperature=%d\n",(uint16_t)(si7020_temperature*10));
 ////	HAL_Delay(1000);
 ////    EPD_DelayMs(&epd, 500);
   }

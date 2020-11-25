@@ -122,6 +122,7 @@ void rt_hw_console_output(const char *str)
         HAL_UART_Transmit(&huart1, (uint8_t *)(str + i), 1, 1);
     }
 }
+RTM_EXPORT(rt_hw_console_output);
 /* USER CODE END 1 */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

@@ -149,6 +149,15 @@
     // </h>
 #endif
 
+
+#define RT_USING_I2C
+#define RT_USING_I2C_BITOPS
+#define BSP_USING_I2C2
+#define PKG_USING_SI702X    
+#define BSP_USING_I2C1
+#define PKG_USING_PCF8563
+
+
 // <<< end of configuration section >>>
 
 #endif

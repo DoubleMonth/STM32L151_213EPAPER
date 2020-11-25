@@ -52,6 +52,9 @@
 "stm32l151c8txa\cpuport.o"
 "stm32l151c8txa\context_rvds.o"
 "stm32l151c8txa\board.o"
+"stm32l151c8txa\pcf8563.o"
+"stm32l151c8txa\si7020_iic.o"
+"stm32l151c8txa\key.o"
 --library_type=microlib --strict --scatter "STM32L151C8TxA\STM32L151C8TxA.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
