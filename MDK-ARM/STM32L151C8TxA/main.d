@@ -49,3 +49,4 @@ stm32l151c8txa\main.o: ..\BSP\imagedata.h
 stm32l151c8txa\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 stm32l151c8txa\main.o: ..\packages\pcf8563/pcf8563.h
 stm32l151c8txa\main.o: ..\packages\si7020/si7020_iic.h
+stm32l151c8txa\main.o: ..\packages\key/key.h

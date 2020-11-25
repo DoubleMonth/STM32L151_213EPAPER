@@ -229,3 +229,22 @@ void PCF8563_ReadTime(uint8_t *p_time_buf)
 	}
 
 }
+void PCF8563_SetINT(void)
+{
+	PCF8563_WriteOneByte(0x01,0x11); //控制状态寄存器2设置，TI/TP=0;TIE=1
+	PCF8563_WriteOneByte(0x0E,0x82);	//设置定时器控制器寄存器 TE=1,TD1=0,TD0=1(1Hz)
+	PCF8563_WriteOneByte(0x0F,0x3C);	//设置定时器到计数器数值为60，即定时1min
+}
+void PCF8563_ClearINT(void)  //清除中断TF标志位
+{
+	PCF8563_WriteOneByte(0x01,0x11);
+}
+uint8_t PCF85636_ReadINT(void)
+{
+	uint8_t temp;
+	temp=PCF8563_ReadOneByte(0x01);
+	if(0x04==(0x04&temp))
+		return 1;
+	else
+		return 0;
+}

@@ -32,6 +32,7 @@
 #include <stdlib.h>
 #include "pcf8563/pcf8563.h"
 #include "si7020/si7020_iic.h"
+#include "key/key.h"
 
 /* USER CODE END Includes */
 
@@ -108,9 +109,11 @@ int main(void)
   MX_GPIO_Init();
   MX_SPI1_Init();
   PCF8563_IIC_Init();
+  PCF8563_SetINT();
   SI7020_IIC_Init();
   MX_USART1_UART_Init();
   PCF8563_WriteTime();
+  keyInit();
   /* USER CODE BEGIN 2 */
 	rt_kprintf("Init Finsh!\n");
 
@@ -229,14 +232,23 @@ rt_thread_mdelay(2000);
 //	  HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);
 //	  HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin);
 //	  rt_thread_mdelay(500);
+
+	/*    PCF8563 1分钟中断输出 start
+	while(PCF85636_ReadINT()==0)
+	{;}
 	  HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);
 	  HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin);
+	  PCF8563_ClearINT();
+	  
+	PCF8563 1分钟中断输出 end   */
+		/*
 	  PCF8563_ReadTime(time_buffer);
-//	 rt_kprintf("%d%d:%d%d,%d%d:%d%d\n",time_buffer[0]/10,time_buffer[0]%10,time_buffer[1]/10,time_buffer[1]%10,time_buffer[2]/10,time_buffer[2]%10,time_buffer[3]/10,time_buffer[3]%10);
-	rt_kprintf("%d%d:%d%d\n",time_buffer[4]%10,time_buffer[5]%10,time_buffer[6]%10,time_buffer[7]%10);
+	 rt_kprintf("%d%d:%d%d,%d%d:%d%d\n",time_buffer[0]/10,time_buffer[0]%10,time_buffer[1]/10,time_buffer[1]%10,time_buffer[2]/10,time_buffer[2]%10,time_buffer[3]/10,time_buffer[3]%10);
+//	rt_kprintf("%d%d:%d%d\n",time_buffer[4]%10,time_buffer[5]%10,time_buffer[6]%10,time_buffer[7]%10);
 	rt_thread_mdelay(500);
 	si7020Measure(&si7020_temperature,&si7020_humidity);
 	rt_kprintf("temperature=%d\n",(uint16_t)(si7020_temperature*10));
+		*/
 ////	HAL_Delay(1000);
 ////    EPD_DelayMs(&epd, 500);
   }

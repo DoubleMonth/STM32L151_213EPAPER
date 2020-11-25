@@ -61,5 +61,8 @@ void PCF8563_IIC_NAck(void);				//IIC²»·¢ËÍACKÐÅºÅ
 uint8_t PCF8563_ReadOneByte(uint16_t ReadAddr);
 void PCF8563_ReadTime(uint8_t *p_time_buf);
 void PCF8563_WriteTime(void);
+void PCF8563_SetINT(void);
+void PCF8563_ClearINT(void);
+uint8_t PCF85636_ReadINT(void);
 #endif
 
