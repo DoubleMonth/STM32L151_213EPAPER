@@ -7,7 +7,7 @@ I (..\Fonts\fonts.h)(0x5F89AEED)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB2B80)
 I (..\BSP\epdif.h)(0x5F7DC19A)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -25,6 +25,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -36,7 +38,7 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h)(0x5F726E52)
 F (..\BSP\epdif.c)(0x5F9AC71B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\epdif.o --omf_browse stm32l151c8txa\epdif.crf --depend stm32l151c8txa\epdif.d)
 I (..\BSP\epdif.h)(0x5F7DC19A)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -55,6 +57,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -99,10 +103,10 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB2B80)
 F (..\Fonts\font21.c)(0x5F9187E5)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\font21.o --omf_browse stm32l151c8txa\font21.crf --depend stm32l151c8txa\font21.d)
 I (..\Fonts\fonts.h)(0x5F89AEED)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB2B80)
-F (../Core/Src/main.c)(0x5FBE7431)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\main.o --omf_browse stm32l151c8txa\main.crf --depend stm32l151c8txa\main.d)
+F (../Core/Src/main.c)(0x5FBFC286)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\main.o --omf_browse stm32l151c8txa\main.crf --depend stm32l151c8txa\main.d)
 I (../Core/Inc/main.h)(0x5FBE53FE)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -121,6 +125,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -149,11 +155,12 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB2B78)
 I (..\packages\pcf8563/pcf8563.h)(0x5FBE67B9)
 I (..\packages\si7020/si7020_iic.h)(0x5FBD0C56)
 I (..\packages\key/key.h)(0x5FBE57BE)
+I (../Core/Inc/adc.h)(0x5FBFC049)
 F (../Core/Src/gpio.c)(0x5F7F27F9)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\gpio.o --omf_browse stm32l151c8txa\gpio.crf --depend stm32l151c8txa\gpio.d)
 I (../Core/Inc/gpio.h)(0x5F7DBFBF)
 I (../Core/Inc/main.h)(0x5FBE53FE)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -172,6 +179,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -192,7 +201,7 @@ F (../Core/Src/spi.c)(0x5F7F2B50)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 -
 I (../Core/Inc/spi.h)(0x5F7DBFC0)
 I (../Core/Inc/main.h)(0x5FBE53FE)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -211,6 +220,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -231,7 +242,7 @@ F (../Core/Src/usart.c)(0x5FB3E01B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0
 I (../Core/Inc/usart.h)(0x5F7DBFC0)
 I (../Core/Inc/main.h)(0x5FBE53FE)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -250,6 +261,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -269,7 +282,7 @@ I (..\rt-thread-3.1.3\include\rtm.h)(0x5DC11BB7)
 F (../Core/Src/stm32l1xx_it.c)(0x5FB3E74D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\stm32l1xx_it.o --omf_browse stm32l151c8txa\stm32l1xx_it.crf --depend stm32l151c8txa\stm32l1xx_it.d)
 I (../Core/Inc/main.h)(0x5FBE53FE)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -288,6 +301,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -308,7 +323,7 @@ I (../Core/Inc/stm32l1xx_it.h)(0x5F9AC293)
 F (../Core/Src/stm32l1xx_hal_msp.c)(0x5F9C1A23)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\stm32l1xx_hal_msp.o --omf_browse stm32l151c8txa\stm32l1xx_hal_msp.crf --depend stm32l151c8txa\stm32l1xx_hal_msp.d)
 I (../Core/Inc/main.h)(0x5FBE53FE)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -327,6 +342,49 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h)(0x5F726E52)
+I (..\rt-thread-3.1.3\include\rtthread.h)(0x5DC11BE0)
+I (..\rt-thread-3.1.3\rtconfig.h)(0x5F9C385C)
+I (C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE\RTE_Components.h)(0x5F7DBFDE)
+I (..\rt-thread-3.1.3\include\rtdebug.h)(0x5DC11BB7)
+I (..\rt-thread-3.1.3\include\rtdef.h)(0x5DC61FDF)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x55DB2B7E)
+I (..\rt-thread-3.1.3\include\rtservice.h)(0x5DC11BB7)
+I (..\rt-thread-3.1.3\include\rtm.h)(0x5DC11BB7)
+F (..\Core\Src\adc.c)(0x5FBFBF83)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\adc.o --omf_browse stm32l151c8txa\adc.crf --depend stm32l151c8txa\adc.d)
+I (../Core/Inc/adc.h)(0x5FBFC049)
+I (../Core/Inc/main.h)(0x5FBE53FE)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
+I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
+I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l151xba.h)(0x5F726E3A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5F726E46)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB2B80)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F726E46)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F726E46)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F726E46)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F726E46)
+I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/system_stm32l1xx.h)(0x5F726E3A)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F726E52)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB2B7E)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc_ex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -345,7 +403,7 @@ I (..\rt-thread-3.1.3\include\rtservice.h)(0x5DC11BB7)
 I (..\rt-thread-3.1.3\include\rtm.h)(0x5DC11BB7)
 F (../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c)(0x5F726E52)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\stm32l1xx_hal_spi.o --omf_browse stm32l151c8txa\stm32l1xx_hal_spi.crf --depend stm32l151c8txa\stm32l1xx_hal_spi.d)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -364,6 +422,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -374,7 +434,7 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h)(0x5F726E52)
 F (../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c)(0x5F726E52)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\stm32l1xx_hal.o --omf_browse stm32l151c8txa\stm32l1xx_hal.crf --depend stm32l151c8txa\stm32l1xx_hal.d)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -393,6 +453,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -403,7 +465,7 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h)(0x5F726E52)
 F (../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c)(0x5F726E52)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\stm32l1xx_hal_rcc.o --omf_browse stm32l151c8txa\stm32l1xx_hal_rcc.crf --depend stm32l151c8txa\stm32l1xx_hal_rcc.d)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -422,6 +484,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -432,7 +496,7 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h)(0x5F726E52)
 F (../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c)(0x5F726E52)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\stm32l1xx_hal_rcc_ex.o --omf_browse stm32l151c8txa\stm32l1xx_hal_rcc_ex.crf --depend stm32l151c8txa\stm32l1xx_hal_rcc_ex.d)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -451,6 +515,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -461,7 +527,7 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h)(0x5F726E52)
 F (../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c)(0x5F726E52)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\stm32l1xx_hal_flash.o --omf_browse stm32l151c8txa\stm32l1xx_hal_flash.crf --depend stm32l151c8txa\stm32l1xx_hal_flash.d)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -480,6 +546,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -490,7 +558,7 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h)(0x5F726E52)
 F (../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c)(0x5F726E52)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\stm32l1xx_hal_flash_ex.o --omf_browse stm32l151c8txa\stm32l1xx_hal_flash_ex.crf --depend stm32l151c8txa\stm32l1xx_hal_flash_ex.d)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -509,6 +577,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -519,7 +589,7 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h)(0x5F726E52)
 F (../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c)(0x5F726E52)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\stm32l1xx_hal_flash_ramfunc.o --omf_browse stm32l151c8txa\stm32l1xx_hal_flash_ramfunc.crf --depend stm32l151c8txa\stm32l1xx_hal_flash_ramfunc.d)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -538,6 +608,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -548,7 +620,7 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h)(0x5F726E52)
 F (../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c)(0x5F726E52)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\stm32l1xx_hal_gpio.o --omf_browse stm32l151c8txa\stm32l1xx_hal_gpio.crf --depend stm32l151c8txa\stm32l1xx_hal_gpio.d)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -567,6 +639,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -577,7 +651,7 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h)(0x5F726E52)
 F (../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c)(0x5F726E52)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\stm32l1xx_hal_dma.o --omf_browse stm32l151c8txa\stm32l1xx_hal_dma.crf --depend stm32l151c8txa\stm32l1xx_hal_dma.d)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -596,6 +670,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -606,7 +682,7 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h)(0x5F726E52)
 F (../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c)(0x5F726E52)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\stm32l1xx_hal_pwr.o --omf_browse stm32l151c8txa\stm32l1xx_hal_pwr.crf --depend stm32l151c8txa\stm32l1xx_hal_pwr.d)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -625,6 +701,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -635,7 +713,7 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h)(0x5F726E52)
 F (../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c)(0x5F726E52)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\stm32l1xx_hal_pwr_ex.o --omf_browse stm32l151c8txa\stm32l1xx_hal_pwr_ex.crf --depend stm32l151c8txa\stm32l1xx_hal_pwr_ex.d)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -654,6 +732,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -664,7 +744,7 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h)(0x5F726E52)
 F (../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c)(0x5F726E52)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\stm32l1xx_hal_cortex.o --omf_browse stm32l151c8txa\stm32l1xx_hal_cortex.crf --depend stm32l151c8txa\stm32l1xx_hal_cortex.d)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -683,6 +763,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -693,7 +775,7 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h)(0x5F726E52)
 F (../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c)(0x5F726E52)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\stm32l1xx_hal_exti.o --omf_browse stm32l151c8txa\stm32l1xx_hal_exti.crf --depend stm32l151c8txa\stm32l1xx_hal_exti.d)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -712,6 +794,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -722,7 +806,7 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h)(0x5F726E52)
 F (../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c)(0x5F726E52)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\stm32l1xx_hal_tim.o --omf_browse stm32l151c8txa\stm32l1xx_hal_tim.crf --depend stm32l151c8txa\stm32l1xx_hal_tim.d)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -741,6 +825,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -751,7 +837,7 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h)(0x5F726E52)
 F (../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c)(0x5F726E52)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\stm32l1xx_hal_tim_ex.o --omf_browse stm32l151c8txa\stm32l1xx_hal_tim_ex.crf --depend stm32l151c8txa\stm32l1xx_hal_tim_ex.d)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -770,6 +856,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -780,7 +868,7 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h)(0x5F726E52)
 F (../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c)(0x5F726E52)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\stm32l1xx_hal_uart.o --omf_browse stm32l151c8txa\stm32l1xx_hal_uart.crf --depend stm32l151c8txa\stm32l1xx_hal_uart.d)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -799,6 +887,70 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h)(0x5F726E52)
+F (..\Drivers\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_adc.c)(0x5F726E52)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\stm32l1xx_hal_adc.o --omf_browse stm32l151c8txa\stm32l1xx_hal_adc.crf --depend stm32l151c8txa\stm32l1xx_hal_adc.d)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
+I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
+I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l151xba.h)(0x5F726E3A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5F726E46)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB2B80)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F726E46)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F726E46)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F726E46)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F726E46)
+I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/system_stm32l1xx.h)(0x5F726E3A)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F726E52)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB2B7E)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc_ex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h)(0x5F726E52)
+F (..\Drivers\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_adc_ex.c)(0x5F726E52)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\stm32l1xx_hal_adc_ex.o --omf_browse stm32l151c8txa\stm32l1xx_hal_adc_ex.crf --depend stm32l151c8txa\stm32l1xx_hal_adc_ex.d)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
+I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
+I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l151xba.h)(0x5F726E3A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5F726E46)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB2B80)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F726E46)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F726E46)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F726E46)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F726E46)
+I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/system_stm32l1xx.h)(0x5F726E3A)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F726E52)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB2B7E)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc_ex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -818,7 +970,7 @@ I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F726E46)
 I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F726E46)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/system_stm32l1xx.h)(0x5F726E3A)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F726E52)
@@ -828,6 +980,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -1010,7 +1164,7 @@ I (..\rt-thread-3.1.3\include\rtm.h)(0x5DC11BB7)
 I (../Core/Inc/usart.h)(0x5F7DBFC0)
 I (../Core/Inc/main.h)(0x5FBE53FE)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -1028,6 +1182,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -1040,7 +1196,7 @@ F (..\packages\pcf8563\pcf8563.c)(0x5FBE6C0A)(--c99 -c --cpu Cortex-M3 -D__MICRO
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D027B04)
 I (../Core/Inc/main.h)(0x5FBE53FE)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -1059,6 +1215,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -1089,7 +1247,7 @@ I (..\rt-thread-3.1.3\include\rtm.h)(0x5DC11BB7)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D027B04)
 I (../Core/Inc/main.h)(0x5FBE53FE)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -1108,6 +1266,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)
@@ -1121,7 +1281,7 @@ I (..\packages\si7020/si7020_iic.h)(0x5FBD0C56)
 F (..\packages\key\key.c)(0x5FBE5E1A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\key.o --omf_browse stm32l151c8txa\key.crf --depend stm32l151c8txa\key.d)
 I (..\packages\key/key.h)(0x5FBE57BE)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
-I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5F7DBFC1)
+I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5F726E52)
 I (../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5F726E3A)
@@ -1140,6 +1300,8 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5F726E52)
+I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5F726E52)

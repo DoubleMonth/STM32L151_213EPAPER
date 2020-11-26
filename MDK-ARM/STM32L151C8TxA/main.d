@@ -21,6 +21,8 @@ stm32l151c8txa\main.o: ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h
 stm32l151c8txa\main.o: ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h
 stm32l151c8txa\main.o: ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h
 stm32l151c8txa\main.o: ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h
+stm32l151c8txa\main.o: ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h
+stm32l151c8txa\main.o: ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h
 stm32l151c8txa\main.o: ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h
 stm32l151c8txa\main.o: ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h
 stm32l151c8txa\main.o: ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h
@@ -50,3 +52,4 @@ stm32l151c8txa\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 stm32l151c8txa\main.o: ..\packages\pcf8563/pcf8563.h
 stm32l151c8txa\main.o: ..\packages\si7020/si7020_iic.h
 stm32l151c8txa\main.o: ..\packages\key/key.h
+stm32l151c8txa\main.o: ../Core/Inc/adc.h

@@ -33,6 +33,7 @@
 #include "pcf8563/pcf8563.h"
 #include "si7020/si7020_iic.h"
 #include "key/key.h"
+#include "adc.h"
 
 /* USER CODE END Includes */
 
@@ -86,6 +87,8 @@ int main(void)
   unsigned long time_start_ms;
   unsigned long time_now_s;
 	char temp;
+	uint16_t adcx;
+	float temp1;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -114,6 +117,7 @@ int main(void)
   MX_USART1_UART_Init();
   PCF8563_WriteTime();
   keyInit();
+  MX_ADC_Init();
   /* USER CODE BEGIN 2 */
 	rt_kprintf("Init Finsh!\n");
 
@@ -232,7 +236,10 @@ rt_thread_mdelay(2000);
 	  HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);
 	  HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin);
 	  rt_thread_mdelay(1000);
-
+		adcx=Get_Adc_Average(ADC_CHANNEL_1,20);
+		temp1=(float)adcx*(3.3/4096);          //获取计算后的带小数的实际电压值，比如3.1111
+		adcx=temp1*1000;                            //赋值整数部分给adcx变量，因为adcx为u16整形
+		rt_kprintf("adc1=%d\n",adcx);
 	/*    PCF8563 1分钟中断输出 start
 	while(PCF85636_ReadINT()==0)
 	{;}
