@@ -108,7 +108,7 @@ void EPD_SendData(EPD* epd, unsigned char data) {
  */
 void EPD_WaitUntilIdle(EPD* epd) {
   while(EPD_DigitalRead(epd, epd->busy_pin) == HIGH) {      //0: busy, 1: idle
-    EPD_DelayMs(epd, 10);
+    EPD_DelayMs(epd, 100);
   }      
 }
 
@@ -208,7 +208,9 @@ void EPD_DisplayFrame(EPD* epd) {
  *          You can use EPD_Init() to awaken
  */
 void EPD_Sleep(EPD* epd) {
-  EPD_SendCommand(epd, DEEP_SLEEP_MODE);
+  while(EPD_DigitalRead(epd,epd->busy_pin)==HIGH);
+	EPD_SendCommand(epd, DEEP_SLEEP_MODE);
+	EPD_SendData(epd,0x01);
   EPD_WaitUntilIdle(epd);
 }
 

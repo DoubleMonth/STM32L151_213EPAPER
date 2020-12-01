@@ -20,18 +20,18 @@
 //#define SI7020_SDA_OUT() {GPIOB->MODER&=~(3<<(11*2));GPIOB->MODER|=(1<<(11*2));}	//PB7输入模式
 
 
-#define SI7020_SDA_IN()  do{GPIOB->MODER&=~(3<<(7*2));GPIOB->MODER|=(0<<(7*2));}while(0)	//PB7输入模式
-#define SI7020_SDA_OUT() do{GPIOB->MODER&=~(3<<(7*2));GPIOB->MODER|=(1<<(7*2));}while(0)	//PB7输入模式
+#define SI7020_SDA_IN()  do{GPIOA->MODER&=~(3<<(0*2));GPIOA->MODER|=(0<<(0*2));}while(0)	//PB7输入模式
+#define SI7020_SDA_OUT() do{GPIOA->MODER&=~(3<<(0*2));GPIOA->MODER|=(1<<(0*2));}while(0)	//PB7输入模式
 
 //#define SI7020_SCL_Pin GPIO_PIN_10
 //#define SI7020_SCL_GPIO_Port GPIOB
 //#define SI7020_SDA_Pin GPIO_PIN_11
 //#define SI7020_SDA_GPIO_Port GPIOB
 
-#define SI7020_SCL_Pin GPIO_PIN_6
-#define SI7020_SCL_GPIO_Port GPIOB
-#define SI7020_SDA_Pin GPIO_PIN_7
-#define SI7020_SDA_GPIO_Port GPIOB
+#define SI7020_SCL_Pin GPIO_PIN_4
+#define SI7020_SCL_GPIO_Port GPIOA
+#define SI7020_SDA_Pin GPIO_PIN_0
+#define SI7020_SDA_GPIO_Port GPIOA
 
 
 #define SI7020_ADDR    0x80

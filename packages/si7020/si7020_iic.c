@@ -32,19 +32,19 @@ void SI7020_IIC_Init(void)
 {
     GPIO_InitTypeDef GPIO_Initure;
     
-	__HAL_RCC_GPIOB_CLK_ENABLE();   //使能GPIOC时钟
+	__HAL_RCC_GPIOA_CLK_ENABLE();   //使能GPIOC时钟
     
     //PC11,12初始化设置
     GPIO_Initure.Pin|=SI7020_SDA_Pin;
-    GPIO_Initure.Mode=GPIO_MODE_OUTPUT_PP;  //推挽输出
-    GPIO_Initure.Pull=GPIO_PULLUP;          //上拉
-    GPIO_Initure.Speed=GPIO_SPEED_FREQ_HIGH;     //高速
+    GPIO_Initure.Mode=GPIO_MODE_ANALOG;  //推挽输出
+//    GPIO_Initure.Pull=GPIO_PULLUP;          //上拉
+    GPIO_Initure.Speed=GPIO_SPEED_FREQ_LOW;     //高速
     HAL_GPIO_Init(SI7020_SDA_GPIO_Port,&GPIO_Initure);
 	
 	 GPIO_Initure.Pin|=SI7020_SCL_Pin;
-    GPIO_Initure.Mode=GPIO_MODE_OUTPUT_PP;  //推挽输出
-    GPIO_Initure.Pull=GPIO_PULLUP;          //上拉
-    GPIO_Initure.Speed=GPIO_SPEED_FREQ_HIGH;     //高速
+    GPIO_Initure.Mode=GPIO_MODE_ANALOG;  //推挽输出
+//    GPIO_Initure.Pull=GPIO_PULLUP;          //上拉
+    GPIO_Initure.Speed=GPIO_SPEED_FREQ_LOW;     //高速
     HAL_GPIO_Init(SI7020_SCL_GPIO_Port,&GPIO_Initure);
     
 	HAL_GPIO_WritePin(SI7020_SCL_GPIO_Port,SI7020_SCL_Pin,GPIO_PIN_SET);

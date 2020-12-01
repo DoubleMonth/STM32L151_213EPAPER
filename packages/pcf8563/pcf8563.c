@@ -40,13 +40,13 @@ void PCF8563_IIC_Init(void)
     
     //PC11,12初始化设置
     GPIO_Initure.Pin|=PCF8563_SCL_Pin|PCF8563_SDA_Pin;
-    GPIO_Initure.Mode=GPIO_MODE_OUTPUT_PP;  //推挽输出
-    GPIO_Initure.Pull=GPIO_PULLUP;          //上拉
-    GPIO_Initure.Speed=GPIO_SPEED_FREQ_HIGH;     //高速
+    GPIO_Initure.Mode=GPIO_MODE_ANALOG;  //推挽输出
+//    GPIO_Initure.Pull=GPIO_PULLUP;          //上拉
+    GPIO_Initure.Speed=GPIO_SPEED_FREQ_LOW;     //高速
     HAL_GPIO_Init(GPIOB,&GPIO_Initure);
     
-	HAL_GPIO_WritePin(PCF8563_SCL_GPIO_Port,PCF8563_SCL_Pin,GPIO_PIN_SET);
-	HAL_GPIO_WritePin(PCF8563_SDA_GPIO_Port,PCF8563_SDA_Pin,GPIO_PIN_SET);
+//	HAL_GPIO_WritePin(PCF8563_SCL_GPIO_Port,PCF8563_SCL_Pin,GPIO_PIN_SET);
+//	HAL_GPIO_WritePin(PCF8563_SDA_GPIO_Port,PCF8563_SDA_Pin,GPIO_PIN_SET);
 }
 
 //产生IIC起始信号

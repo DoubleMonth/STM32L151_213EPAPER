@@ -68,6 +68,34 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 unsigned char frame_buffer[4096] = {0};
+void enterStopMode(void)
+{
+	
+//	__HAL_RCC_GPIOB_CLK_DISABLE();
+	HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON,PWR_STOPENTRY_WFI);
+}
+#define RST_Pin GPIO_PIN_2
+#define RST_GPIO_Port GPIOA
+#define BUSY_Pin GPIO_PIN_3
+#define BUSY_GPIO_Port GPIOA
+#define DC_Pin GPIO_PIN_11
+#define DC_GPIO_Port GPIOA
+#define SPI_CS_Pin GPIO_PIN_12
+#define SPI_CS_GPIO_Port GPIOA
+void SetUnusedPin()
+{
+	 GPIO_InitTypeDef GPIO_Initure;
+    
+	__HAL_RCC_GPIOA_CLK_ENABLE();   //使能GPIOC时钟
+    
+    //PC11,12初始化设置
+    GPIO_Initure.Pin|=GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_11|GPIO_PIN_12;
+    GPIO_Initure.Mode=GPIO_MODE_ANALOG;  //推挽输出
+//    GPIO_Initure.Pull=GPIO_PULLUP;          //上拉
+    GPIO_Initure.Speed=GPIO_SPEED_FREQ_LOW;     //高速
+    HAL_GPIO_Init(SI7020_SDA_GPIO_Port,&GPIO_Initure);
+	__HAL_RCC_GPIOA_CLK_DISABLE(); 
+}
 /* USER CODE END 0 */
 
 /**
@@ -89,6 +117,7 @@ int main(void)
 	char temp;
 	uint16_t adcx;
 	float temp1;
+	uint16_t stop_counter;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -121,16 +150,17 @@ int main(void)
   /* USER CODE BEGIN 2 */
 	rt_kprintf("Init Finsh!\n");
 
-/*	
+
 
 	EPD epd;
+	 Paint paint;
+		
   if (EPD_Init(&epd, lut_full_update) != 0) {  //设置全局刷新还是局部刷新  lut_full_update
     return -1;
   }
   
   EPD_ClearFrameMemory(&epd, 0xFF);
   
-  Paint paint;
   Paint_Init (&paint, frame_buffer, 120, 250);
     Paint_SetRotate(&paint, ROTATE_90);
     Paint_Clear(&paint, UNCOLORED);
@@ -185,8 +215,12 @@ int main(void)
   EPD_DisplayFrame(&epd);
 
 rt_thread_mdelay(2000);
+//HAL_GPIO_WritePin(RST_GPIO_Port,GPIO_PIN_2,GPIO_PIN_RESET);
+//rt_thread_mdelay(10);
 
-*/
+EPD_Sleep(&epd);
+rt_thread_mdelay(10);
+//SetUnusedPin();
 //  if (EPD_Init(&epd, lut_partial_update) != 0) {     //设置全局刷新还是局部刷新
 //    return -1;
 //  }
@@ -197,7 +231,7 @@ rt_thread_mdelay(2000);
    *  i.e. the next action of SetFrameMemory will set the other memory area
    *  therefore you have to set the frame memory and refresh the display twice.
    */
-  
+//  
 //  Paint_Init (&paint, frame_buffer, 64, 64);
 //  Paint_Clear(&paint, UNCOLORED);
 //  EPD_SetFrameMemory(&epd, IMAGE_DATA, 0, 0, epd.width, epd.height);
@@ -216,30 +250,32 @@ rt_thread_mdelay(2000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-////	  time_now_s = (HAL_GetTick() - time_start_ms) / 1000;
-////    time_string[0] = time_now_s / 60 / 10 + '0';
-////    time_string[1] = time_now_s / 60 % 10 + '0';
-////    time_string[3] = time_now_s % 60 / 10 + '0';
-////    time_string[4] = time_now_s % 60 % 10 + '0';
+//	  time_now_s = (HAL_GetTick() - time_start_ms) / 1000;
+//    time_string[0] = time_now_s / 60 / 10 + '0';
+//    time_string[1] = time_now_s / 60 % 10 + '0';
+//    time_string[3] = time_now_s % 60 / 10 + '0';
+//    time_string[4] = time_now_s % 60 % 10 + '0';
 
-////    Paint_SetRotate(&paint, ROTATE_90);
+//    Paint_SetRotate(&paint, ROTATE_90);
 
-////    Paint_Clear(&paint, UNCOLORED);
-////    Paint_DrawStringAt(&paint, 0, 0, time_table[time_now_s / 60 / 10], &Font80, COLORED);
-////	  Paint_DrawStringAt(&paint, 40, 0, time_table[time_now_s / 60% 10], &Font80, COLORED);
-////	  Paint_DrawStringAt(&paint, 70, 0, ":", &Font80, COLORED);	//：
-////	  Paint_DrawStringAt(&paint, 100, 0, time_table[time_now_s % 60 / 10], &Font80, COLORED);
-////	  Paint_DrawStringAt(&paint, 140, 0, time_table[time_now_s % 60 % 10], &Font80, COLORED);
-////    EPD_SetFrameMemory(&epd, frame_buffer, 0, 0, Paint_GetWidth(&paint), Paint_GetHeight(&paint));
-////    EPD_DisplayFrame(&epd);
+//    Paint_Clear(&paint, UNCOLORED);
+//    Paint_DrawStringAt(&paint, 0, 0, time_table[time_now_s / 60 / 10], &Font80, COLORED);
+//	  Paint_DrawStringAt(&paint, 40, 0, time_table[time_now_s / 60% 10], &Font80, COLORED);
+//	  Paint_DrawStringAt(&paint, 70, 0, ":", &Font80, COLORED);	//：
+//	  Paint_DrawStringAt(&paint, 100, 0, time_table[time_now_s % 60 / 10], &Font80, COLORED);
+//	  Paint_DrawStringAt(&paint, 140, 0, time_table[time_now_s % 60 % 10], &Font80, COLORED);
+//    EPD_SetFrameMemory(&epd, frame_buffer, 0, 0, Paint_GetWidth(&paint), Paint_GetHeight(&paint));
+//    EPD_DisplayFrame(&epd);
 ////	  
-	  HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);
-	  HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin);
-	  rt_thread_mdelay(1000);
+//	  HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);
+//	  HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin);
+//	  rt_thread_mdelay(1000);
+	  /*  读取ADC值 start 
 		adcx=Get_Adc_Average(ADC_CHANNEL_1,20);
 		temp1=(float)adcx*(3.3/4096);          //获取计算后的带小数的实际电压值，比如3.1111
 		adcx=temp1*1000;                            //赋值整数部分给adcx变量，因为adcx为u16整形
 		rt_kprintf("adc1=%d\n",adcx);
+		读取ADC值 end */ 
 	/*    PCF8563 1分钟中断输出 start
 	while(PCF85636_ReadINT()==0)
 	{;}
@@ -248,15 +284,15 @@ rt_thread_mdelay(2000);
 	  PCF8563_ClearINT();
 	  
 	PCF8563 1分钟中断输出 end   */
-		/*
+		/*   pcf8563 si7020 测试 start
 	  PCF8563_ReadTime(time_buffer);
-	 rt_kprintf("%d%d:%d%d,%d%d:%d%d\n",time_buffer[0]/10,time_buffer[0]%10,time_buffer[1]/10,time_buffer[1]%10,time_buffer[2]/10,time_buffer[2]%10,time_buffer[3]/10,time_buffer[3]%10);
+	 rt_kprintf("%d%d:%d%d,%d%d:%d%d\n",time_buffer[0]/10,time_buffer[0]%10,time_buffer[1]/10,time_buffer[1]%10,time_buffer[2]/10,time_buffer[2]%10,time_buffer[6]/10,time_buffer[6]%10);
 //	rt_kprintf("%d%d:%d%d\n",time_buffer[4]%10,time_buffer[5]%10,time_buffer[6]%10,time_buffer[7]%10);
 	rt_thread_mdelay(500);
 	si7020Measure(&si7020_temperature,&si7020_humidity);
 	rt_kprintf("temperature=%d\n",(uint16_t)(si7020_temperature*10));
-		*/
-////	HAL_Delay(1000);
+		 pcf8563 si7020 测试 end */
+//	rt_thread_mdelay(1000);
 ////    EPD_DelayMs(&epd, 500);
   }
   /* USER CODE END 3 */

@@ -22,27 +22,33 @@ Dialog DLL:      TCM.DLL V1.14.8.0
  
 <h2>Project:</h2>
 C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\STM32L151C8TxA.uvprojx
-Project File Date:  11/25/2020
+Project File Date:  11/26/2020
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'STM32L151C8TxA'
 compiling main.c...
-../Core/Src/main.c(85): warning:  #177-D: variable "time_string" was declared but never referenced
+../Core/Src/main.c(113): warning:  #177-D: variable "time_string" was declared but never referenced
   	char time_string[] = {'0', '0', ':', '0', '0', '\0'};
-../Core/Src/main.c(86): warning:  #177-D: variable "time_table" was declared but never referenced
+../Core/Src/main.c(114): warning:  #177-D: variable "time_table" was declared but never referenced
   	char* time_table[]={"0","1","2","3","4","5","6","7","8","9"};
-../Core/Src/main.c(87): warning:  #177-D: variable "time_start_ms" was declared but never referenced
+../Core/Src/main.c(115): warning:  #177-D: variable "time_start_ms" was declared but never referenced
     unsigned long time_start_ms;
-../Core/Src/main.c(88): warning:  #177-D: variable "time_now_s" was declared but never referenced
+../Core/Src/main.c(116): warning:  #177-D: variable "time_now_s" was declared but never referenced
     unsigned long time_now_s;
-../Core/Src/main.c(89): warning:  #177-D: variable "temp" was declared but never referenced
+../Core/Src/main.c(117): warning:  #177-D: variable "temp" was declared but never referenced
   	char temp;
-../Core/Src/main.c: 5 warnings, 0 errors
+../Core/Src/main.c(118): warning:  #177-D: variable "adcx" was declared but never referenced
+  	uint16_t adcx;
+../Core/Src/main.c(119): warning:  #177-D: variable "temp1" was declared but never referenced
+  	float temp1;
+../Core/Src/main.c(120): warning:  #177-D: variable "stop_counter" was declared but never referenced
+  	uint16_t stop_counter;
+../Core/Src/main.c: 8 warnings, 0 errors
 linking...
-Program Size: Code=15932 RO-data=696 RW-data=184 ZI-data=2080  
+Program Size: Code=18188 RO-data=19532 RW-data=248 ZI-data=6208  
 FromELF: creating hex file...
-"STM32L151C8TxA\STM32L151C8TxA.axf" - 0 Error(s), 5 Warning(s).
+"STM32L151C8TxA\STM32L151C8TxA.axf" - 0 Error(s), 8 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -60,7 +66,7 @@ Package Vendor: ARM
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:4.3.0
-Build Time Elapsed:  00:00:05
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

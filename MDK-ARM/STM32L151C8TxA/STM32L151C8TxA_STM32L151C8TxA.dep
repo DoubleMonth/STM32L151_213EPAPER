@@ -1,6 +1,6 @@
 Dependencies for Project 'STM32L151C8TxA', Target 'STM32L151C8TxA': (DO NOT MODIFY !)
 F (startup_stm32l151xba.s)(0x5F7DBFC6)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include--pd "__UVISION_VERSION SETA 518" --pd "_RTE_ SETA 1" --pd "STM32L151xBA SETA 1"--list startup_stm32l151xba.lst --xref -o stm32l151c8txa\startup_stm32l151xba.o --depend stm32l151c8txa\startup_stm32l151xba.d)
-F (..\BSP\epd2in13.c)(0x5F9C2A34)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\epd2in13.o --omf_browse stm32l151c8txa\epd2in13.crf --depend stm32l151c8txa\epd2in13.d)
+F (..\BSP\epd2in13.c)(0x5FC3AE42)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\epd2in13.o --omf_browse stm32l151c8txa\epd2in13.crf --depend stm32l151c8txa\epd2in13.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB2B78)
 I (..\BSP\epd2in13.h)(0x59B88FFA)
 I (..\Fonts\fonts.h)(0x5F89AEED)
@@ -67,7 +67,7 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h)(0x5F726E52)
-I (../Core/Inc/main.h)(0x5FBE53FE)
+I (../Core/Inc/main.h)(0x5FC10A59)
 I (..\rt-thread-3.1.3\include\rtthread.h)(0x5DC11BE0)
 I (..\rt-thread-3.1.3\rtconfig.h)(0x5F9C385C)
 I (C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE\RTE_Components.h)(0x5F7DBFDE)
@@ -103,8 +103,8 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB2B80)
 F (..\Fonts\font21.c)(0x5F9187E5)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\font21.o --omf_browse stm32l151c8txa\font21.crf --depend stm32l151c8txa\font21.d)
 I (..\Fonts\fonts.h)(0x5F89AEED)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB2B80)
-F (../Core/Src/main.c)(0x5FBFC286)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\main.o --omf_browse stm32l151c8txa\main.crf --depend stm32l151c8txa\main.d)
-I (../Core/Inc/main.h)(0x5FBE53FE)
+F (../Core/Src/main.c)(0x5FC6394C)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\main.o --omf_browse stm32l151c8txa\main.crf --depend stm32l151c8txa\main.d)
+I (../Core/Inc/main.h)(0x5FC10A59)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
 I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
@@ -152,13 +152,13 @@ I (..\BSP\epdif.h)(0x5F7DC19A)
 I (..\BSP\epdpaint.h)(0x59B7A697)
 I (..\BSP\imagedata.h)(0x59B7B6FC)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB2B78)
-I (..\packages\pcf8563/pcf8563.h)(0x5FBE67B9)
-I (..\packages\si7020/si7020_iic.h)(0x5FBD0C56)
-I (..\packages\key/key.h)(0x5FBE57BE)
+I (..\packages\pcf8563/pcf8563.h)(0x5FC1145B)
+I (..\packages\si7020/si7020_iic.h)(0x5FC106BA)
+I (..\packages\key/key.h)(0x5FC104DD)
 I (../Core/Inc/adc.h)(0x5FBFC049)
-F (../Core/Src/gpio.c)(0x5F7F27F9)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\gpio.o --omf_browse stm32l151c8txa\gpio.crf --depend stm32l151c8txa\gpio.d)
+F (../Core/Src/gpio.c)(0x5FC10A59)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\gpio.o --omf_browse stm32l151c8txa\gpio.crf --depend stm32l151c8txa\gpio.d)
 I (../Core/Inc/gpio.h)(0x5F7DBFBF)
-I (../Core/Inc/main.h)(0x5FBE53FE)
+I (../Core/Inc/main.h)(0x5FC10A59)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
 I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
@@ -199,7 +199,7 @@ I (..\rt-thread-3.1.3\include\rtservice.h)(0x5DC11BB7)
 I (..\rt-thread-3.1.3\include\rtm.h)(0x5DC11BB7)
 F (../Core/Src/spi.c)(0x5F7F2B50)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\spi.o --omf_browse stm32l151c8txa\spi.crf --depend stm32l151c8txa\spi.d)
 I (../Core/Inc/spi.h)(0x5F7DBFC0)
-I (../Core/Inc/main.h)(0x5FBE53FE)
+I (../Core/Inc/main.h)(0x5FC10A59)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
 I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
@@ -240,7 +240,7 @@ I (..\rt-thread-3.1.3\include\rtservice.h)(0x5DC11BB7)
 I (..\rt-thread-3.1.3\include\rtm.h)(0x5DC11BB7)
 F (../Core/Src/usart.c)(0x5FB3E01B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\usart.o --omf_browse stm32l151c8txa\usart.crf --depend stm32l151c8txa\usart.d)
 I (../Core/Inc/usart.h)(0x5F7DBFC0)
-I (../Core/Inc/main.h)(0x5FBE53FE)
+I (../Core/Inc/main.h)(0x5FC10A59)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
 I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
@@ -280,7 +280,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x55DB2B7E)
 I (..\rt-thread-3.1.3\include\rtservice.h)(0x5DC11BB7)
 I (..\rt-thread-3.1.3\include\rtm.h)(0x5DC11BB7)
 F (../Core/Src/stm32l1xx_it.c)(0x5FB3E74D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\stm32l1xx_it.o --omf_browse stm32l151c8txa\stm32l1xx_it.crf --depend stm32l151c8txa\stm32l1xx_it.d)
-I (../Core/Inc/main.h)(0x5FBE53FE)
+I (../Core/Inc/main.h)(0x5FC10A59)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
 I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
@@ -321,7 +321,7 @@ I (..\rt-thread-3.1.3\include\rtservice.h)(0x5DC11BB7)
 I (..\rt-thread-3.1.3\include\rtm.h)(0x5DC11BB7)
 I (../Core/Inc/stm32l1xx_it.h)(0x5F9AC293)
 F (../Core/Src/stm32l1xx_hal_msp.c)(0x5F9C1A23)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\stm32l1xx_hal_msp.o --omf_browse stm32l151c8txa\stm32l1xx_hal_msp.crf --depend stm32l151c8txa\stm32l1xx_hal_msp.d)
-I (../Core/Inc/main.h)(0x5FBE53FE)
+I (../Core/Inc/main.h)(0x5FC10A59)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
 I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
@@ -360,9 +360,9 @@ I (..\rt-thread-3.1.3\include\rtdef.h)(0x5DC61FDF)
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x55DB2B7E)
 I (..\rt-thread-3.1.3\include\rtservice.h)(0x5DC11BB7)
 I (..\rt-thread-3.1.3\include\rtm.h)(0x5DC11BB7)
-F (..\Core\Src\adc.c)(0x5FBFBF83)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\adc.o --omf_browse stm32l151c8txa\adc.crf --depend stm32l151c8txa\adc.d)
+F (..\Core\Src\adc.c)(0x5FBFC3A3)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\adc.o --omf_browse stm32l151c8txa\adc.crf --depend stm32l151c8txa\adc.d)
 I (../Core/Inc/adc.h)(0x5FBFC049)
-I (../Core/Inc/main.h)(0x5FBE53FE)
+I (../Core/Inc/main.h)(0x5FC10A59)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
 I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
@@ -1162,7 +1162,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x55DB2B7E)
 I (..\rt-thread-3.1.3\include\rtservice.h)(0x5DC11BB7)
 I (..\rt-thread-3.1.3\include\rtm.h)(0x5DC11BB7)
 I (../Core/Inc/usart.h)(0x5F7DBFC0)
-I (../Core/Inc/main.h)(0x5FBE53FE)
+I (../Core/Inc/main.h)(0x5FC10A59)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
 I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
@@ -1192,9 +1192,9 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h)(0x5F726E52)
-F (..\packages\pcf8563\pcf8563.c)(0x5FBE6C0A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\pcf8563.o --omf_browse stm32l151c8txa\pcf8563.crf --depend stm32l151c8txa\pcf8563.d)
+F (..\packages\pcf8563\pcf8563.c)(0x5FC1145B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\pcf8563.o --omf_browse stm32l151c8txa\pcf8563.crf --depend stm32l151c8txa\pcf8563.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D027B04)
-I (../Core/Inc/main.h)(0x5FBE53FE)
+I (../Core/Inc/main.h)(0x5FC10A59)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
 I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
@@ -1234,8 +1234,8 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x55DB2B7E)
 I (..\rt-thread-3.1.3\include\rtservice.h)(0x5DC11BB7)
 I (..\rt-thread-3.1.3\include\rtm.h)(0x5DC11BB7)
 I (../Core/Inc/usart.h)(0x5F7DBFC0)
-I (..\packages\pcf8563/pcf8563.h)(0x5FBE67B9)
-F (..\packages\si7020\si7020_iic.c)(0x5FB7E9CF)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\si7020_iic.o --omf_browse stm32l151c8txa\si7020_iic.crf --depend stm32l151c8txa\si7020_iic.d)
+I (..\packages\pcf8563/pcf8563.h)(0x5FC1145B)
+F (..\packages\si7020\si7020_iic.c)(0x5FC1138A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\si7020_iic.o --omf_browse stm32l151c8txa\si7020_iic.crf --depend stm32l151c8txa\si7020_iic.d)
 I (..\rt-thread-3.1.3\include\rtthread.h)(0x5DC11BE0)
 I (..\rt-thread-3.1.3\rtconfig.h)(0x5F9C385C)
 I (C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE\RTE_Components.h)(0x5F7DBFDE)
@@ -1245,7 +1245,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x55DB2B7E)
 I (..\rt-thread-3.1.3\include\rtservice.h)(0x5DC11BB7)
 I (..\rt-thread-3.1.3\include\rtm.h)(0x5DC11BB7)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D027B04)
-I (../Core/Inc/main.h)(0x5FBE53FE)
+I (../Core/Inc/main.h)(0x5FC10A59)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
 I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
@@ -1277,9 +1277,9 @@ I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5F726E52)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h)(0x5F726E52)
 I (../Core/Inc/usart.h)(0x5F7DBFC0)
-I (..\packages\si7020/si7020_iic.h)(0x5FBD0C56)
-F (..\packages\key\key.c)(0x5FBE5E1A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\key.o --omf_browse stm32l151c8txa\key.crf --depend stm32l151c8txa\key.d)
-I (..\packages\key/key.h)(0x5FBE57BE)
+I (..\packages\si7020/si7020_iic.h)(0x5FC106BA)
+F (..\packages\key\key.c)(0x5FC10570)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc -I ../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../Drivers/CMSIS/Include -I ..\BSP -I ..\Fonts -I ..\rt-thread-3.1.3\include\libc -I ..\rt-thread-3.1.3\include -I ..\rt-thread-3.1.3\libcpu\arm\cortex-m3 -I ..\rt-thread-3.1.3\libcpu -I ..\rt-thread-3.1.3\src -I ..\rt-thread-3.1.3 -I ..\packages-I C:\Users\HaiFeng\Desktop\New\STM32L151C8TxA\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L151xBA -DUSE_HAL_DRIVER -DSTM32L151xBA-o stm32l151c8txa\key.o --omf_browse stm32l151c8txa\key.crf --depend stm32l151c8txa\key.d)
+I (..\packages\key/key.h)(0x5FC104DD)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5F726E52)
 I (../Core/Inc/stm32l1xx_hal_conf.h)(0x5FBFB89B)
 I (../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5F726E52)
@@ -1318,3 +1318,4 @@ I (..\rt-thread-3.1.3\include\rtdef.h)(0x5DC61FDF)
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x55DB2B7E)
 I (..\rt-thread-3.1.3\include\rtservice.h)(0x5DC11BB7)
 I (..\rt-thread-3.1.3\include\rtm.h)(0x5DC11BB7)
+I (../Core/Inc/main.h)(0x5FC10A59)
