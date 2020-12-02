@@ -4,6 +4,7 @@
 "stm32l151c8txa\epdif.o"
 "stm32l151c8txa\epdpaint.o"
 "stm32l151c8txa\imagedata.o"
+"stm32l151c8txa\epddisp.o"
 "stm32l151c8txa\font8.o"
 "stm32l151c8txa\font12.o"
 "stm32l151c8txa\font16.o"

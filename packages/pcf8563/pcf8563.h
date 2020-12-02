@@ -16,8 +16,8 @@
 ////////////////////////////////////////////////////////////////////////////////// 	
 //IO方向设置  MODER
 
-#define SDA_IN()  do{GPIOA->MODER&=~(3<<(0*2));GPIOA->MODER|=(0<<(0*2));}while(0)	//PB7输入模式
-#define SDA_OUT() do{GPIOA->MODER&=~(3<<(0*2));GPIOA->MODER|=(1<<(0*2));}while(0)	//PB7输入模式
+#define SDA_IN()  do{GPIOB->MODER&=~(3<<(7*2));GPIOB->MODER|=(0<<(7*2));}while(0)	//PB7输入模式
+#define SDA_OUT() do{GPIOB->MODER&=~(3<<(7*2));GPIOB->MODER|=(1<<(7*2));}while(0)	//PB7输入模式
 
 
 #define PCF8563_SCL_Pin GPIO_PIN_6   //GPIO_PIN_0

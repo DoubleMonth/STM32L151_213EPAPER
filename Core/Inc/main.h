@@ -67,9 +67,9 @@ void Error_Handler(void);
 #define RST_GPIO_Port GPIOA
 #define BUSY_Pin GPIO_PIN_3
 #define BUSY_GPIO_Port GPIOA
-#define DC_Pin GPIO_PIN_11
+#define DC_Pin GPIO_PIN_0
 #define DC_GPIO_Port GPIOA
-#define SPI_CS_Pin GPIO_PIN_12
+#define SPI_CS_Pin GPIO_PIN_4
 #define SPI_CS_GPIO_Port GPIOA
 /* USER CODE BEGIN Private defines */
 

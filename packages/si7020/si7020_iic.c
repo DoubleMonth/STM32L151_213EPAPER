@@ -36,15 +36,15 @@ void SI7020_IIC_Init(void)
     
     //PC11,12初始化设置
     GPIO_Initure.Pin|=SI7020_SDA_Pin;
-    GPIO_Initure.Mode=GPIO_MODE_ANALOG;  //推挽输出
-//    GPIO_Initure.Pull=GPIO_PULLUP;          //上拉
-    GPIO_Initure.Speed=GPIO_SPEED_FREQ_LOW;     //高速
+    GPIO_Initure.Mode=GPIO_MODE_OUTPUT_PP;  //推挽输出
+    GPIO_Initure.Pull=GPIO_PULLUP;          //上拉
+    GPIO_Initure.Speed=GPIO_SPEED_FREQ_HIGH;     //高速
     HAL_GPIO_Init(SI7020_SDA_GPIO_Port,&GPIO_Initure);
 	
 	 GPIO_Initure.Pin|=SI7020_SCL_Pin;
-    GPIO_Initure.Mode=GPIO_MODE_ANALOG;  //推挽输出
-//    GPIO_Initure.Pull=GPIO_PULLUP;          //上拉
-    GPIO_Initure.Speed=GPIO_SPEED_FREQ_LOW;     //高速
+    GPIO_Initure.Mode=GPIO_MODE_OUTPUT_PP;  //推挽输出
+    GPIO_Initure.Pull=GPIO_PULLUP;          //上拉
+    GPIO_Initure.Speed=GPIO_SPEED_FREQ_HIGH;     //高速
     HAL_GPIO_Init(SI7020_SCL_GPIO_Port,&GPIO_Initure);
     
 	HAL_GPIO_WritePin(SI7020_SCL_GPIO_Port,SI7020_SCL_Pin,GPIO_PIN_SET);
@@ -209,7 +209,7 @@ uint8_t si7020Measure(double *temperature, double *humidity)
 	SI7020_IIC_Start();
 	SI7020_IIC_Send_Byte(SI7020_ADDR|SI7020_READ);
 	SI7020_IIC_Wait_Ack();
-	rt_thread_mdelay(10);
+	rt_thread_mdelay(20);
 	si70xx_data[1] = SI7020_IIC_Read_Byte(1);
 	si70xx_data[0] = SI7020_IIC_Read_Byte(0);
 	SI7020_IIC_Stop();

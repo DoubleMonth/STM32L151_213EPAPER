@@ -34,6 +34,7 @@
 #include "si7020/si7020_iic.h"
 #include "key/key.h"
 #include "adc.h"
+#include "epddisp.h"
 
 /* USER CODE END Includes */
 
@@ -54,8 +55,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-#define COLORED      0
-#define UNCOLORED    1
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -67,21 +67,13 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-unsigned char frame_buffer[4096] = {0};
+
 void enterStopMode(void)
 {
 	
 //	__HAL_RCC_GPIOB_CLK_DISABLE();
 	HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON,PWR_STOPENTRY_WFI);
 }
-#define RST_Pin GPIO_PIN_2
-#define RST_GPIO_Port GPIOA
-#define BUSY_Pin GPIO_PIN_3
-#define BUSY_GPIO_Port GPIOA
-#define DC_Pin GPIO_PIN_11
-#define DC_GPIO_Port GPIOA
-#define SPI_CS_Pin GPIO_PIN_12
-#define SPI_CS_GPIO_Port GPIOA
 void SetUnusedPin()
 {
 	 GPIO_InitTypeDef GPIO_Initure;
@@ -102,126 +94,59 @@ void SetUnusedPin()
   * @brief  The application entry point.
   * @retval int
   */
-uint8_t time_buffer[8]={0};
-uint8_t time_buffer1[8]={0};
-double si7020_temperature;
-double si7020_humidity;
+//extern uint8_t time_buffer[8];
+//uint8_t time_buffer[8]={0};
+//uint8_t time_buffer1[8]={0};
+extern double si7020_temperature;
+extern double si7020_humidity;
 int main(void)
 {
-  /* USER CODE BEGIN 1 */
+	/* USER CODE BEGIN 1 */
 
-	char time_string[] = {'0', '0', ':', '0', '0', '\0'};
-	char* time_table[]={"0","1","2","3","4","5","6","7","8","9"};
-  unsigned long time_start_ms;
-  unsigned long time_now_s;
+	
+	unsigned long time_start_ms;
+	unsigned long time_now_s;
 	char temp;
 	uint16_t adcx;
 	float temp1;
 	uint16_t stop_counter;
-  /* USER CODE END 1 */
+	/* USER CODE END 1 */
 
-  /* MCU Configuration--------------------------------------------------------*/
+	/* MCU Configuration--------------------------------------------------------*/
 
-  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-	
-  HAL_Init();
+	/* Reset of all peripherals, Initializes the Flash interface and the Systick. */
 
-  /* USER CODE BEGIN Init */
+	HAL_Init();
 
-  /* USER CODE END Init */
+	/* USER CODE BEGIN Init */
 
-  /* Configure the system clock */
-  SystemClock_Config();
+	/* USER CODE END Init */
 
-  /* USER CODE BEGIN SysInit */
+	/* Configure the system clock */
+	SystemClock_Config();
 
-  /* USER CODE END SysInit */
+	/* USER CODE BEGIN SysInit */
 
-  /* Initialize all configured peripherals */
-  MX_GPIO_Init();
-  MX_SPI1_Init();
-  PCF8563_IIC_Init();
-  PCF8563_SetINT();
-  SI7020_IIC_Init();
-  MX_USART1_UART_Init();
-  PCF8563_WriteTime();
-  keyInit();
-  MX_ADC_Init();
-  /* USER CODE BEGIN 2 */
+	/* USER CODE END SysInit */
+
+	/* Initialize all configured peripherals */
+	MX_GPIO_Init();
+	MX_SPI1_Init();
+	PCF8563_IIC_Init();
+	PCF8563_SetINT();
+	SI7020_IIC_Init();
+	MX_USART1_UART_Init();
+//	PCF8563_WriteTime();
+	keyInit();
+//	MX_ADC_Init();
+	/* USER CODE BEGIN 2 */
 	rt_kprintf("Init Finsh!\n");
-
-
-
-	EPD epd;
-	 Paint paint;
-		
-  if (EPD_Init(&epd, lut_full_update) != 0) {  //设置全局刷新还是局部刷新  lut_full_update
-    return -1;
-  }
-  
-  EPD_ClearFrameMemory(&epd, 0xFF);
-  
-  Paint_Init (&paint, frame_buffer, 120, 250);
-    Paint_SetRotate(&paint, ROTATE_90);
-    Paint_Clear(&paint, UNCOLORED);
-	Paint_DrawStringAt(&paint, 0, 95, "2", &Font16, COLORED);  //2
-	Paint_DrawStringAt(&paint, 9, 95, "0", &Font16, COLORED);  //0
-	Paint_DrawStringAt(&paint, 18, 95, "2", &Font16, COLORED);  //2
-	Paint_DrawStringAt(&paint, 27, 95, "0", &Font16, COLORED);  //0   9
-	
-	  Paint_DrawStringAt(&paint, 36, 90, "!", &Font21, COLORED);  //年  16
-	  Paint_DrawStringAt(&paint, 52, 95, "1", &Font16, COLORED);  //2
-	Paint_DrawStringAt(&paint, 61, 95, "0", &Font16, COLORED);  //0
-	  Paint_DrawStringAt(&paint, 70, 90, "\"", &Font21, COLORED);		//月
-	  Paint_DrawStringAt(&paint, 86, 95, "2", &Font16, COLORED);  //2
-	Paint_DrawStringAt(&paint, 95, 95, "0", &Font16, COLORED);  //0
-	  Paint_DrawStringAt(&paint, 104, 90, "#", &Font21, COLORED);    //日
-	  
-	  Paint_DrawStringAt(&paint, 128, 90,  " ", &Font21, COLORED);    //十
-	  Paint_DrawStringAt(&paint, 144, 90, "\"", &Font21, COLORED);		//月
-	  Paint_DrawStringAt(&paint, 160, 90, "(", &Font21, COLORED);		//初
-	  Paint_DrawStringAt(&paint, 176, 90, " ", &Font21, COLORED);    //十
-	  
-	  Paint_DrawStringAt(&paint, 200, 90,  "*", &Font21, COLORED);    //星
-	  Paint_DrawStringAt(&paint, 216, 90,  "+", &Font21, COLORED);    //期
-	  Paint_DrawStringAt(&paint, 232, 90, "6", &Font21, COLORED);    //六 
-	  
-	  Paint_DrawStringAt(&paint, 187, 2,  ".", &Font21, COLORED);    //温
-	  Paint_DrawStringAt(&paint, 207, 2,  "0", &Font21, COLORED);    //度
-	  
-	  Paint_DrawStringAt(&paint, 187, 25,  "2", &Font20, COLORED);    //2
-	  Paint_DrawStringAt(&paint, 200, 25,  "5", &Font20, COLORED);    //5
-	  Paint_DrawStringAt(&paint, 210, 25,  ".", &Font20, COLORED);    //.
-	  Paint_DrawStringAt(&paint, 220, 25,  "9", &Font20, COLORED);    //0
-	  Paint_DrawStringAt(&paint, 234, 25,  "C", &Font20, COLORED);    //℃
-	  
-	  Paint_DrawStringAt(&paint, 187, 41,  "/", &Font21, COLORED);    //湿
-	  Paint_DrawStringAt(&paint, 207, 41,  "0", &Font21, COLORED);    //度
-	
-
-	  Paint_DrawStringAt(&paint, 187, 62,  "2", &Font20, COLORED);    //2
-	  Paint_DrawStringAt(&paint, 200, 62,  "9", &Font20, COLORED);    //5
-	  Paint_DrawStringAt(&paint, 210, 62,  ".", &Font20, COLORED);    //.
-	  Paint_DrawStringAt(&paint, 220, 62,  "9", &Font20, COLORED);    //0
-	  Paint_DrawStringAt(&paint, 234, 62,  "%", &Font20, COLORED);    //%
-	  
-	  Paint_DrawStringAt(&paint, 0, 0, "12", &Font80, COLORED);   //小时
-	Paint_DrawStringAt(&paint, 70, 0, ":", &Font80, COLORED);	//：
-	Paint_DrawStringAt(&paint, 100, 0, "34", &Font80, COLORED);//分钟
-	
-  Paint_DrawRectangle(&paint, 0, 86, 250, 84, COLORED);   //画两个矩形显示成黑色条
-  Paint_DrawRectangle(&paint, 0, 85, 250, 83, COLORED);	
-  EPD_SetFrameMemory(&epd, frame_buffer, 0, 0, 120, 250);
-  EPD_DisplayFrame(&epd);
-
-rt_thread_mdelay(2000);
-//HAL_GPIO_WritePin(RST_GPIO_Port,GPIO_PIN_2,GPIO_PIN_RESET);
-//rt_thread_mdelay(10);
-
-EPD_Sleep(&epd);
-rt_thread_mdelay(10);
+	epdDispFullUpdate();
+//	rt_thread_mdelay(1000);
+	MX_USART1_UART_Init();
+	setPartialUpdate();
 //SetUnusedPin();
-//  if (EPD_Init(&epd, lut_partial_update) != 0) {     //设置全局刷新还是局部刷新
+//  if (EPD_Init(&epd, lut_partial_update) != 0) {     //设置局部刷新
 //    return -1;
 //  }
 
@@ -284,14 +209,16 @@ rt_thread_mdelay(10);
 	  PCF8563_ClearINT();
 	  
 	PCF8563 1分钟中断输出 end   */
-		/*   pcf8563 si7020 测试 start
-	  PCF8563_ReadTime(time_buffer);
-	 rt_kprintf("%d%d:%d%d,%d%d:%d%d\n",time_buffer[0]/10,time_buffer[0]%10,time_buffer[1]/10,time_buffer[1]%10,time_buffer[2]/10,time_buffer[2]%10,time_buffer[6]/10,time_buffer[6]%10);
+		  //pcf8563 si7020 测试 start
+//	  PCF8563_ReadTime(time_buffer);
+//	 rt_kprintf("%d%d:%d%d,%d%d:%d%d\n",time_buffer[0]/10,time_buffer[0]%10,time_buffer[1]/10,time_buffer[1]%10,time_buffer[5]/10,time_buffer[5]%10,time_buffer[6]/10,time_buffer[6]%10);
 //	rt_kprintf("%d%d:%d%d\n",time_buffer[4]%10,time_buffer[5]%10,time_buffer[6]%10,time_buffer[7]%10);
-	rt_thread_mdelay(500);
-	si7020Measure(&si7020_temperature,&si7020_humidity);
-	rt_kprintf("temperature=%d\n",(uint16_t)(si7020_temperature*10));
-		 pcf8563 si7020 测试 end */
+	updateMinute();
+	rt_thread_mdelay(1000);
+//	si7020Measure(&si7020_temperature,&si7020_humidity);
+//	rt_kprintf("temperature=%d\n",(uint16_t)(si7020_temperature*10));
+//	rt_kprintf("si7020_humidity=%d\n",(uint16_t)(si7020_humidity*10));
+	//	 pcf8563 si7020 测试 end 
 //	rt_thread_mdelay(1000);
 ////    EPD_DelayMs(&epd, 500);
   }

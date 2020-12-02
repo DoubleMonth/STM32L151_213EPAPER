@@ -405,6 +405,11 @@
               <FileType>1</FileType>
               <FilePath>..\BSP\imagedata.c</FilePath>
             </File>
+            <File>
+              <FileName>epddisp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\epddisp.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
